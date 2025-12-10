@@ -1,0 +1,21 @@
+team_id,team_name,total_upcoming_fixtures,next_5_fixtures_count,avg_days_between_fixtures,congestion_level,home_fixtures_upcoming,away_fixtures_upcoming
+5,Brentford,23,5,9.8,Low,12,11
+1,Arsenal,23,5,10.0,Low,12,11
+3,Burnley,23,5,10.0,Low,12,11
+19,West Ham,23,5,10.0,Low,12,11
+8,Crystal Palace,23,5,10.2,Low,12,11
+10,Fulham,23,5,11.2,Low,11,12
+16,Nott'm Forest,23,5,11.5,Low,12,11
+4,Bournemouth,23,5,11.8,Low,11,12
+14,Man Utd,23,5,11.8,Low,12,11
+15,Newcastle,23,5,12.0,Low,11,12
+6,Brighton,23,5,12.0,Low,11,12
+7,Chelsea,23,5,12.0,Low,12,11
+12,Liverpool,23,5,12.0,Low,12,11
+11,Leeds,23,5,12.0,Low,11,12
+20,Wolves,23,5,12.0,Low,11,12
+17,Sunderland,23,5,12.2,Low,12,11
+2,Aston Villa,23,5,12.5,Low,11,12
+9,Everton,23,5,13.0,Low,11,12
+13,Man City,23,5,13.0,Low,11,12
+18,Spurs,23,5,13.0,Low,11,12
