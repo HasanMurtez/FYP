@@ -1,163 +1,189 @@
 import requests
 import pandas as pd
 import json
+import os
+from datetime import datetime
 
-def fetch_all_players():
-   
-    print("FETCHING PL DATA - 2025/2026 SEASON")
+def ensure_directories():
+    """Create necessary directories if they don't exist"""
+    os.makedirs('data/raw', exist_ok=True)
+    os.makedirs('data/processed', exist_ok=True)
+    print("✅ Directories created/verified")
+
+def fetch_basic_player_data():
+    """
+    Fetch basic player data from FPL bootstrap-static endpoint
+    This includes current season stats, team info, and basic metrics
+    """
+    print(" FETCHING BASIC PLAYER DATA")
     
-    # FPL API
+    # Fetch from FPL API
     url = "https://fantasy.premierleague.com/api/bootstrap-static/"
+    print(f"\n📡 Fetching data from: {url}")
     
-    print("\nFetching data from Fantasy Premier League API...")
-    response = requests.get(url)
-    
-    if response.status_code == 200:
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
         data = response.json()
-        
-        # Save raw response
-        with open('data/raw/fpl_full_data.json', 'w') as f:
-            json.dump(data, f, indent=2)
-        
-        print("Y Data fetched successfully!")
-        
-        # Extract players
-        players = data['elements']
-        teams = data['teams']
-        
-        # create team lookup dictionary
-        team_lookup = {team['id']: team['name'] for team in teams}
-        
-        # process player data
-        players_list = []
-        for player in players:
-            players_list.append({
-                'id': player['id'],
-                'name': player['web_name'],
-                'full_name': player['first_name'] + ' ' + player['second_name'],
-                'team': team_lookup[player['team']],
-                'position': player['element_type'],  # 1=GK, 2=DEF, 3=MID, 4=FWD
-                'cost': player['now_cost'] / 10,  # Convert to millions
-                
-                # Performance stats
-                'total_points': player['total_points'],
-                'minutes': player['minutes'],
-                'goals': player['goals_scored'],
-                'assists': player['assists'],
-                'clean_sheets': player['clean_sheets'],
-                'yellow_cards': player['yellow_cards'],
-                'red_cards': player['red_cards'],
-                
-                # injury/availability data
-                'chance_of_playing_next_round': player['chance_of_playing_next_round'],
-                'news': player['news'],  # Injury news
-                'status': player['status'],  # a=available, d=doubtful, i=injured, u=unavailable
-                
-                # Form metrics
-                'form': float(player['form']) if player['form'] else 0,
-                'selected_by_percent': float(player['selected_by_percent']),
-                'transfers_in': player['transfers_in'],
-                'transfers_out': player['transfers_out'],
-                
-                # Additional useful fields
-                'games_played': player['starts'],
-                'bonus_points': player['bonus'],
-                'influence': float(player['influence']),
-                'creativity': float(player['creativity']),
-                'threat': float(player['threat']),
-                'ict_index': float(player['ict_index'])
-            })
-        
-        # convert to DataFrame
-        df = pd.DataFrame(players_list)
-        
-        # Save to CSV
-        df.to_csv('data/raw/fpl_players_2025_26.csv', index=False)
-        
-        print(f"\n Saved {len(df)} players to data/raw/fpl_players_2025_26.csv")
-        
-        return df
-    else:
-        print(f" Failed to fetch data. Status code: {response.status_code}")
+        print(" Successfully fetched data from FPL API")
+    except Exception as e:
+        print(f" Error fetching data: {e}")
         return None
-
-def analyze_data(df):
-    """
-    Quick analysis of the fetched data
-    """
-    print("DATA SUMMARY")
     
-    print(f"\nTotal players: {len(df)}")
+    # Extract relevant data
+    players = data['elements']
+    teams = data['teams']
+    events = data['events']  # Gameweeks
     
-    # Position breakdown
-    position_map = {1: 'Goalkeeper', 2: 'Defender', 3: 'Midfielder', 4: 'Forward'}
-    print("\nPlayers by position:")
-    for pos_id, pos_name in position_map.items():
-        count = len(df[df['position'] == pos_id])
-        print(f"  {pos_name}: {count}")
+    print(f"\n📊 Data Summary:")
+    print(f"   Players: {len(players)}")
+    print(f"   Teams: {len(teams)}")
+    print(f"   Gameweeks: {len(events)}")
     
-    # Injury status breakdown
-    print("\nInjury/Availability Status:")
-    status_counts = df['status'].value_counts()
-    status_map = {'a': 'Available', 'd': 'Doubtful', 'i': 'Injured', 'u': 'Unavailable'}
-    for status_code, count in status_counts.items():
-        print(f"  {status_map.get(status_code, status_code)}: {count}")
+    # Create team lookup dictionary
+    team_lookup = {team['id']: {
+        'name': team['name'],
+        'short_name': team['short_name'],
+        'strength': team['strength']
+    } for team in teams}
     
-    # Players with injury news
-    injured_players = df[df['news'] != ''].copy()
-    print(f"\nPlayers with injury/availability news: {len(injured_players)}")
+    # Get current gameweek
+    current_gw = None
+    for event in events:
+        if event['is_current']:
+            current_gw = event['id']
+            break
     
-    if len(injured_players) > 0:
-        print("\nSample injured/unavailable players:")
-        for idx, player in injured_players.head(5).iterrows():
-            print(f"  - {player['full_name']} ({player['team']})")
-            print(f"    Status: {player['status']}")
+    if not current_gw:
+        # If no current GW, get the last finished one
+        current_gw = max([e['id'] for e in events if e['finished']])
     
-    # Minutes played stats
-    print(f"\nMinutes played stats:")
-    print(f"  Average: {df['minutes'].mean():.0f}")
-    print(f"  Max: {df['minutes'].max()}")
-    print(f"  Players with 0 minutes: {len(df[df['minutes'] == 0])}")
-    print(f"  Players with 1000+ minutes: {len(df[df['minutes'] >= 1000])}")
+    print(f"   Current Gameweek: {current_gw}")
     
-    # Top 5 players by minutes
-    print("\nTop 5 most-played players (potential overwork risk):")
-    top_players = df.nlargest(5, 'minutes')[['full_name', 'team', 'position', 'minutes', 'status']]
-    for idx, player in top_players.iterrows():
-        pos_name = position_map[player['position']]
-        print(f"  - {player['full_name']} ({player['team']}, {pos_name}): {player['minutes']} mins - Status: {player['status']}")
+    # Process player data
+    print("\n Processing player data...")
+    processed_players = []
     
-    # Check data quality
-    print(f"\nData Quality Check:")
-    print(f"  Missing minutes data: {df['minutes'].isna().sum()}")
-    print(f"  Missing status data: {df['status'].isna().sum()}")
-    print(f"  Players with no games: {len(df[df['games_played'] == 0])}")
-
-def show_sample_data(df):
-    """
-    Show sample of what the data looks like
-    """
-    print("SAMPLE DATA (First 5 Players)")
+    position_map = {1: 'GK', 2: 'DEF', 3: 'MID', 4: 'FWD'}
+    status_map = {
+        'a': 'Available',
+        'd': 'Doubtful', 
+        'i': 'Injured',
+        'u': 'Unavailable',
+        's': 'Suspended',
+        'n': 'Not in squad'
+    }
     
-    sample = df.head(5)[['full_name', 'team', 'position', 'minutes', 'status', 'news']]
-    print(sample.to_string(index=False))
+    for player in players:
+        team_info = team_lookup[player['team']]
+        
+        processed_players.append({
+            # Identifiers
+            'id': player['id'],
+            'code': player['code'],
+            'web_name': player['web_name'],
+            'first_name': player['first_name'],
+            'second_name': player['second_name'],
+            'full_name': f"{player['first_name']} {player['second_name']}",
+            
+            # Team information
+            'team_id': player['team'],
+            'team_name': team_info['name'],
+            'team_short_name': team_info['short_name'],
+            'team_strength': team_info['strength'],
+            
+            # Position
+            'position_id': player['element_type'],
+            'position': position_map[player['element_type']],
+            
+            # Availability & Status
+            'status': player['status'],
+            'status_description': status_map.get(player['status'], 'Unknown'),
+            'chance_of_playing_next': player['chance_of_playing_next_round'],
+            'chance_of_playing_this': player['chance_of_playing_this_round'],
+            'news': player['news'],
+            'news_added': player['news_added'],
+            
+            # Performance Stats
+            'total_points': player['total_points'],
+            'points_per_game': float(player['points_per_game']) if player['points_per_game'] else 0,
+            'form': float(player['form']) if player['form'] else 0,
+            
+            # Playing Time
+            'minutes': player['minutes'],
+            'starts': player['starts'],
+            'expected_starts': float(player['expected_goal_involvements']) if player.get('expected_goal_involvements') else 0,
+            
+            # Attacking Stats
+            'goals_scored': player['goals_scored'],
+            'assists': player['assists'],
+            'expected_goals': float(player['expected_goals']) if player['expected_goals'] else 0,
+            'expected_assists': float(player['expected_assists']) if player['expected_assists'] else 0,
+            'expected_goal_involvements': float(player['expected_goal_involvements']) if player['expected_goal_involvements'] else 0,
+            
+            # Defensive Stats (for defenders)
+            'clean_sheets': player['clean_sheets'],
+            'goals_conceded': player['goals_conceded'],
+            'own_goals': player['own_goals'],
+            'penalties_saved': player['penalties_saved'],
+            'penalties_missed': player['penalties_missed'],
+            'saves': player['saves'],
+            
+            # Discipline
+            'yellow_cards': player['yellow_cards'],
+            'red_cards': player['red_cards'],
+            'bonus': player['bonus'],
+            'bps': player['bps'],
+            
+            # Advanced Metrics
+            'influence': float(player['influence']),
+            'creativity': float(player['creativity']),
+            'threat': float(player['threat']),
+            'ict_index': float(player['ict_index']),
+            
+            # Cost & Ownership
+            'now_cost': player['now_cost'] / 10,  # Convert to actual price (e.g., 100 = £10.0m)
+            'cost_change_start': player['cost_change_start'] / 10,
+            'cost_change_event': player['cost_change_event'] / 10,
+            'selected_by_percent': float(player['selected_by_percent']),
+            'transfers_in': player['transfers_in'],
+            'transfers_out': player['transfers_out'],
+            'transfers_in_event': player['transfers_in_event'],
+            'transfers_out_event': player['transfers_out_event'],
+            
+            # Meta
+            'in_dreamteam': player['in_dreamteam'],
+            'dreamteam_count': player['dreamteam_count'],
+            'value_form': float(player['value_form']) if player['value_form'] else 0,
+            'value_season': float(player['value_season']) if player['value_season'] else 0,
+            
+            # Timestamp
+            'fetch_date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'current_gameweek': current_gw
+        })
+    
+    # Create DataFrame
+    df = pd.DataFrame(processed_players)
+    
+    # Save to CSV
+    output_path = 'data/raw/fpl_players_basic.csv'
+    df.to_csv(output_path, index=False)
+    print(f"\n Saved to: {output_path}")
+    print(f"   Shape: {df.shape[0]} players × {df.shape[1]} columns")
+    
+    # Display sample
+    print("\n Sample Data (first 3 players):")
+    print(df[['full_name', 'team_name', 'position', 'status_description', 
+              'total_points', 'minutes']].head(3).to_string(index=False))
+    
+    return df
 
 def main():
-    # Fetch data
-    df = fetch_all_players()
+    ensure_directories()
+    df = fetch_basic_player_data()
     
     if df is not None:
-        analyze_data(df)
-        show_sample_data(df)
-        
-        print("DATA FETCHING COMPLETE")
-        print("\nData Got:")
-        print("  1.  Current season player data (2025/2026)")
-        print("  2.  Injury status information")
-        print("  3.  Minutes played")
-        print("  4.  Form and performance metrics")
-        print("  5.  700+ Premier League players")
-        print("\n File saved: data/raw/fpl_players_2025_26.csv")
+        print("BASIC DATA COLLECTION COMPLETE")
        
 
 if __name__ == "__main__":
