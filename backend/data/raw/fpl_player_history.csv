@@ -1,0 +1,760 @@
+player_id,player_name,games_played,recent_minutes_last_5,recent_games_last_5,avg_minutes_per_game_last_5,times_unavailable_last_10,max_consecutive_unavailable,total_minutes_last_10,games_started_last_10,workload_trend
+1,David Raya Martín,15,450,5,90.0,0,0,900,10,stable
+2,Kepa Arrizabalaga Revuelta,15,0,0,0.0,10,15,0,0,stable
+3,Karl Hein,15,0,0,0.0,10,15,0,0,stable
+4,Tommy Setford,15,0,0,0.0,10,15,0,0,stable
+5,Gabriel dos Santos Magalhães,15,90,1,18.0,4,4,540,6,decreasing
+6,William Saliba,15,180,2,36.0,3,3,540,5,decreasing
+7,Riccardo Calafiori,15,400,5,80.0,0,0,785,9,stable
+8,Jurriën Timber,15,406,5,81.2,0,0,856,9,stable
+9,Jakub Kiwior,15,0,0,0.0,10,15,0,0,stable
+10,Myles Lewis-Skelly,15,50,3,10.0,3,1,70,0,increasing
+11,Benjamin White,15,180,2,36.0,8,12,180,2,increasing
+13,Brayden Clarke,15,0,0,0.0,10,15,0,0,stable
+14,Maldini Kacurri,15,0,0,0.0,10,15,0,0,stable
+15,Josh Nichols,15,0,0,0.0,10,15,0,0,stable
+16,Bukayo Saka,15,377,5,75.4,0,2,781,9,stable
+17,Martin Ødegaard,15,213,3,42.6,5,5,250,2,increasing
+18,Noni Madueke,15,116,4,23.2,6,6,116,1,increasing
+19,Gabriel Martinelli Silva,15,120,3,24.0,3,3,184,1,increasing
+20,Leandro Trossard,15,207,3,41.4,2,2,628,7,decreasing
+21,Declan Rice,15,442,5,88.4,0,0,871,10,stable
+22,Mikel Merino Zazón,15,402,5,80.4,0,1,514,4,increasing
+23,Fábio Ferreira Vieira,15,0,0,0.0,10,15,0,0,stable
+24,Christian Nørgaard,15,0,0,0.0,8,7,14,0,decreasing
+25,Ethan Nwaneri,15,2,1,0.4,7,3,35,0,decreasing
+26,Martín Zubimendi Ibáñez,15,416,5,83.2,0,0,813,9,stable
+28,Ismeal Kabia,15,0,0,0.0,10,15,0,0,stable
+29,Albert Sambi Lokonga,15,0,0,0.0,10,15,0,0,stable
+30,Kai Havertz,15,0,0,0.0,10,14,0,0,stable
+31,Gabriel Fernando de Jesus,15,0,0,0.0,10,15,0,0,stable
+266,Eberechi Eze,15,322,5,64.4,0,1,709,8,stable
+662,Cristhian Mosquera,15,137,4,27.4,4,2,227,1,increasing
+666,Viktor Gyökeres,15,70,3,14.0,2,2,475,4,decreasing
+700,Max Dowman,14,0,0,0.0,10,12,0,0,stable
+711,Andre Harriman-Annous,13,0,0,0.0,10,13,0,0,stable
+725,Piero Hincapié,12,357,4,71.4,4,5,383,4,increasing
+759,Marli Salmon,1,0,0,0.0,1,1,0,0,insufficient_data
+32,Emiliano Martínez Romero,15,360,4,72.0,1,1,810,9,stable
+33,Marco Bizot,15,90,1,18.0,9,10,90,1,increasing
+34,Joe Gauci,15,0,0,0.0,10,15,0,0,stable
+35,Filip Marschall,15,0,0,0.0,10,15,0,0,stable
+36,Matty Cash,15,446,5,89.2,0,0,889,10,stable
+37,Lucas Digne,15,245,4,49.0,1,1,665,7,decreasing
+38,Ezri Konsa Ngoyo,15,450,5,90.0,0,1,900,10,stable
+39,Ian Maatsen,15,204,3,40.8,3,1,232,2,increasing
+40,Tyrone Mings,15,0,0,0.0,8,5,47,0,decreasing
+41,Pau Torres,15,445,5,89.0,0,2,846,9,stable
+42,Andrés García,15,0,0,0.0,10,15,0,0,stable
+43,Álex Moreno Lopera,15,0,0,0.0,10,15,0,0,stable
+44,Lamare Bogarde,15,36,5,7.2,3,3,206,2,decreasing
+45,Lino da Cruz Sousa,15,0,0,0.0,10,15,0,0,stable
+46,Yasin Özcan,15,0,0,0.0,10,15,0,0,stable
+47,Morgan Rogers,15,445,5,89.0,0,0,895,10,stable
+48,Youri Tielemans,15,286,5,57.2,5,6,286,3,increasing
+49,Leon Bailey,15,0,0,0.0,10,15,0,0,stable
+50,Emiliano Buendía Stati,15,175,5,35.0,1,1,310,1,stable
+51,Samuel Iling-Junior,15,0,0,0.0,10,15,0,0,stable
+53,Donyell Malen,15,165,5,33.0,0,0,350,3,stable
+54,John McGinn,15,377,5,75.4,0,0,735,9,stable
+55,Ross Barkley,15,53,3,10.6,3,6,114,0,stable
+56,Enzo Barrenechea,15,0,0,0.0,10,15,0,0,stable
+57,Lewis Dobbin,15,0,0,0.0,10,15,0,0,stable
+58,Boubacar Kamara,15,416,5,83.2,0,2,794,9,stable
+59,Amadou Onana,15,249,4,49.8,2,4,511,6,stable
+60,Ben Broggio,15,0,0,0.0,10,15,0,0,stable
+61,Leander Dendoncker,15,0,0,0.0,10,15,0,0,stable
+62,Jamaldeen Jimoh-Aloba,15,0,0,0.0,10,15,0,0,stable
+63,Kadan Young,15,0,0,0.0,10,15,0,0,stable
+64,Ollie Watkins,15,333,5,66.6,0,0,677,8,stable
+65,Zépiqueno Redmond,15,0,0,0.0,10,15,0,0,stable
+389,Harvey Elliott,15,0,0,0.0,9,9,45,0,decreasing
+456,Jadon Sancho,15,58,4,11.6,4,4,118,0,stable
+677,Evann Guessand,15,89,2,17.8,3,2,328,3,decreasing
+688,James Wright,15,0,0,0.0,10,15,0,0,stable
+701,Triston Rowe,14,0,0,0.0,10,14,0,0,stable
+702,Bradley Burrowes,14,0,0,0.0,10,12,0,0,stable
+703,Sam Proctor,14,0,0,0.0,10,14,0,0,stable
+710,Travis Patterson,13,0,0,0.0,10,13,0,0,stable
+719,Victor Lindelöf,12,4,1,0.8,7,7,18,0,decreasing
+754,George Hemmings,4,0,0,0.0,4,4,0,0,insufficient_data
+757,Ronnie Hollingshead,2,0,0,0.0,2,2,0,0,insufficient_data
+183,Max Weiß,15,0,0,0.0,10,15,0,0,stable
+184,Etienne Green,15,0,0,0.0,10,15,0,0,stable
+185,Václav Hladký,15,0,0,0.0,10,15,0,0,stable
+186,Connor Roberts,15,0,0,0.0,10,15,0,0,stable
+187,Kyle Walker,15,450,5,90.0,0,0,900,10,stable
+188,Hannes Delcroix,15,0,0,0.0,10,15,0,0,stable
+189,Owen Dodgson,15,0,0,0.0,10,15,0,0,stable
+190,Hjalmar Ekdal,15,180,2,36.0,6,4,271,3,increasing
+191,Maxime Estève,15,450,5,90.0,0,0,900,10,stable
+192,Quilindschy Hartman,15,350,4,70.0,1,1,797,9,stable
+193,Bashir Humphreys,15,0,0,0.0,9,9,2,0,decreasing
+194,Jordan Beyer,15,0,0,0.0,10,15,0,0,stable
+195,Lucas Pires Silva,15,51,2,10.2,8,10,51,0,increasing
+196,Shurandy Sambo,15,0,0,0.0,10,15,0,0,stable
+197,Oliver Sonne,15,0,0,0.0,10,12,0,0,stable
+198,Axel Tuanzebe,15,270,3,54.0,3,6,630,7,stable
+199,Joe Worrall,15,45,1,9.0,8,7,46,0,increasing
+200,Jaidon Anthony,15,227,5,45.4,0,0,591,6,decreasing
+201,Manuel Benson Hedilazio,15,0,0,0.0,10,15,0,0,stable
+202,Jacob Bruun Larsen,15,182,5,36.4,0,2,394,2,stable
+203,Enock Agyei,15,0,0,0.0,10,15,0,0,stable
+204,Darko Churlinov,15,0,0,0.0,10,15,0,0,stable
+205,Josh Cullen,15,430,5,86.0,0,0,859,10,stable
+206,Marcus Edwards,15,42,3,8.4,6,8,50,0,increasing
+207,Hannibal Mejbri,15,127,4,25.4,2,1,151,0,increasing
+208,Luca Koleosho,15,0,0,0.0,10,15,0,0,stable
+209,Josh Laurent,15,46,3,9.2,2,1,326,3,decreasing
+210,Loum Tchaouna,15,260,4,52.0,2,1,439,4,increasing
+211,Aaron Ramsey,15,0,0,0.0,10,15,0,0,stable
+212,Oluwaseun Adewumi,15,0,0,0.0,10,15,0,0,stable
+213,Jaydon Banel,15,0,0,0.0,10,15,0,0,stable
+214,Mike Trésor Ndayishimiye,15,0,0,0.0,10,15,0,0,stable
+215,Zian Flemming,15,293,5,58.6,1,2,542,6,stable
+216,Zeki Amdouni,15,0,0,0.0,10,15,0,0,stable
+217,Lyle Foster,15,227,4,45.4,3,2,387,4,increasing
+218,Ashley Barnes,15,0,0,0.0,9,7,7,0,decreasing
+219,Michael Obafemi,15,0,0,0.0,10,15,0,0,stable
+470,Martin Dúbravka,15,450,5,90.0,0,0,900,10,stable
+676,Lesley Ugochukwu,15,280,5,56.0,0,1,545,6,stable
+680,Armando Broja,15,140,5,28.0,2,3,195,1,increasing
+722,Florentino Ibrain Morris Luís,12,381,5,76.2,0,0,831,10,stable
+66,Norberto Murara Neto,15,0,0,0.0,10,15,0,0,stable
+67,Đorđe Petrović,15,450,5,90.0,0,0,900,10,stable
+68,Will Dennis,15,0,0,0.0,10,15,0,0,stable
+69,Callan McKenna,15,0,0,0.0,10,15,0,0,stable
+70,Alex Paulsen,15,0,0,0.0,10,15,0,0,stable
+71,Illia Zabarnyi,15,0,0,0.0,10,15,0,0,stable
+72,Marcos Senesi Barón,15,331,4,66.2,1,1,768,9,stable
+73,Adam Smith,15,182,4,36.4,6,7,182,2,increasing
+74,Adrien Truffert,15,422,5,84.4,0,0,872,10,stable
+75,Matai Akinmboni,15,0,0,0.0,10,15,0,0,stable
+76,Owen Bevan,15,0,0,0.0,10,15,0,0,stable
+77,James Hill,15,28,1,5.6,7,6,103,1,decreasing
+78,Julián Araujo Zúñiga,15,0,0,0.0,10,15,0,0,stable
+79,Chris Mepham,15,0,0,0.0,10,15,0,0,stable
+80,Julio Soler Barreto,15,20,1,4.0,9,9,20,0,increasing
+81,Justin Kluivert,15,223,4,44.6,1,1,482,5,stable
+82,Antoine Semenyo,15,360,4,72.0,1,1,810,9,stable
+84,Marcus Tavernier,15,390,5,78.0,0,0,750,8,stable
+85,Tyler Adams,15,329,4,65.8,1,1,745,9,stable
+86,David Brooks,15,108,4,21.6,2,1,304,3,decreasing
+87,Ryan Christie,15,72,2,14.4,3,3,193,0,decreasing
+88,Lewis Cook,15,180,3,36.0,4,3,210,1,increasing
+89,Philip Billing,15,0,0,0.0,10,15,0,0,stable
+90,Alex Scott,15,321,5,64.2,0,0,658,7,stable
+91,Luis Sinisterra Lucumí,15,0,0,0.0,10,15,0,0,stable
+92,Romain Faivre,15,0,0,0.0,10,15,0,0,stable
+93,Hamed Traorè,15,0,0,0.0,10,14,0,0,stable
+94,Dominic Sadi,15,0,0,0.0,10,15,0,0,stable
+95,Zain Silcott-Duberry,15,0,0,0.0,10,15,0,0,stable
+96,Ben Winterburn,15,0,0,0.0,10,14,0,0,stable
+97,Francisco Evanilson de Lima Barbosa,15,360,5,72.0,2,2,568,6,increasing
+98,Enes Ünal,15,33,4,6.6,5,8,34,0,increasing
+99,Daniel Adu-Adjei,15,0,0,0.0,10,15,0,0,stable
+100,Junior Kroupi,15,182,4,36.4,2,2,394,5,stable
+391,Ben Gannon-Doak,15,0,0,0.0,6,5,53,0,decreasing
+685,Bafodé Diakité,15,315,4,63.0,2,1,675,7,stable
+687,Remy Rees-Dottin,15,0,0,0.0,10,15,0,0,stable
+697,Amine Adli,14,201,5,40.2,2,1,296,1,increasing
+713,Álex Jiménez Sánchez,12,243,4,48.6,1,1,569,6,stable
+721,Veljko Milosavljevic,12,180,2,36.0,6,2,275,3,increasing
+756,Malcom DaCosta,2,0,0,0.0,2,2,0,0,insufficient_data
+27,Reiss Nelson,15,16,2,3.2,7,9,31,0,stable
+83,Dango Ouattara,15,421,5,84.2,0,1,756,9,stable
+101,Caoimhín Kelleher,15,450,5,90.0,0,0,900,10,stable
+102,Ellery Balcombe,15,0,0,0.0,10,15,0,0,stable
+103,Matthew Cox,15,0,0,0.0,10,15,0,0,stable
+104,Julian Eyestone,15,0,0,0.0,10,15,0,0,stable
+105,Hákon Rafn Valdimarsson,15,0,0,0.0,10,15,0,0,stable
+106,Nathan Collins,15,376,5,75.2,0,0,826,9,stable
+107,Keane Lewis-Potter,15,44,4,8.8,2,1,107,0,decreasing
+108,Kristoffer Ajer,15,214,3,42.8,3,1,574,6,decreasing
+109,Rico Henry,15,154,4,30.8,4,2,170,1,increasing
+110,Michael Kayode,15,435,5,87.0,0,0,861,10,stable
+111,Ethan Pinnock,15,73,1,14.6,9,8,73,1,increasing
+112,Mads Roerslev Rasmussen,15,0,0,0.0,10,15,0,0,stable
+113,Sepp van den Berg,15,450,5,90.0,0,0,900,10,stable
+114,Benjamin Arthur,15,0,0,0.0,10,15,0,0,stable
+115,Benjamin Fredrick,15,0,0,0.0,10,15,0,0,stable
+116,Aaron Hickey,15,166,4,33.2,4,3,330,4,stable
+117,Kim Ji-soo,15,0,0,0.0,10,15,0,0,stable
+118,Jayden Meghoma,15,0,0,0.0,10,15,0,0,stable
+120,Kevin Schade,15,403,5,80.6,0,0,841,9,stable
+121,Mikkel Damsgaard,15,341,5,68.2,0,1,707,9,stable
+122,Antoni Milambo,15,0,0,0.0,10,14,0,0,stable
+123,Fábio Freitas Gouveia Carvalho,15,0,0,0.0,8,5,5,0,decreasing
+124,Jordan Henderson,15,389,5,77.8,0,0,806,9,stable
+125,Vitaly Janelt,15,90,4,18.0,1,4,213,2,stable
+126,Mathias Jensen,15,189,5,37.8,0,1,246,2,increasing
+127,Gustavo Nunes Fernandes Gomes,15,0,0,0.0,10,15,0,0,stable
+128,Frank Onyeka,15,0,0,0.0,7,6,27,0,decreasing
+129,Yehor Yarmoliuk,15,332,5,66.4,0,0,679,8,stable
+130,Romelle Donovan,15,0,0,0.0,10,15,0,0,stable
+131,Yunus Emre Konak,15,0,0,0.0,10,15,0,0,stable
+132,Paris Maghoma,15,0,0,0.0,10,15,0,0,stable
+133,Myles Peart-Harris,15,0,0,0.0,10,15,0,0,stable
+134,Ryan Trevitt,15,0,0,0.0,10,15,0,0,stable
+136,Igor Thiago Nascimento Rodrigues,15,390,5,78.0,0,0,816,9,stable
+137,Iwan Morgan,15,0,0,0.0,10,15,0,0,stable
+748,Josh Dasilva,5,0,0,0.0,5,5,0,0,insufficient_data
+138,Jason Steele,15,0,0,0.0,10,15,0,0,stable
+139,Bart Verbruggen,15,450,5,90.0,0,0,900,10,stable
+140,Tom McGill,15,0,0,0.0,10,15,0,0,stable
+141,Carl Rushworth,15,0,0,0.0,10,15,0,0,stable
+142,Kjell Scherpen,15,0,0,0.0,10,15,0,0,stable
+143,Olivier Boscagli,15,52,2,10.4,8,11,52,0,increasing
+144,Diego Coppola,15,0,0,0.0,9,7,1,0,decreasing
+145,Maxim De Cuyper,15,294,5,58.8,1,1,431,3,increasing
+146,Lewis Dunk,15,405,5,81.0,0,0,855,9,stable
+147,Pervis Estupiñán Tenorio,15,0,0,0.0,10,15,0,0,stable
+148,Ferdi Kadıoğlu,15,418,5,83.6,0,1,868,10,stable
+150,Tariq Lamptey,15,0,0,0.0,10,15,0,0,stable
+151,Jan Paul van Hecke,15,450,5,90.0,0,0,900,10,stable
+152,Joël Veltman,15,34,4,6.8,5,4,88,0,decreasing
+153,Adam Webster,15,0,0,0.0,10,15,0,0,stable
+154,Eiran Cashin,15,0,0,0.0,10,15,0,0,stable
+155,Jacob Slater,15,0,0,0.0,10,15,0,0,stable
+156,Charlie Tasker,15,0,0,0.0,10,15,0,0,stable
+157,Mitoma Kaoru,15,0,0,0.0,9,9,66,1,decreasing
+158,Georginio Rutter,15,307,4,61.4,1,1,674,7,stable
+159,Solly March,15,0,0,0.0,10,15,0,0,stable
+160,Yankuba Minteh,15,422,5,84.4,0,0,868,10,stable
+161,Julio Enciso Espínola,15,0,0,0.0,10,15,0,0,stable
+162,Brajan Gruda,15,101,4,20.2,4,4,193,2,stable
+163,Jack Hinshelwood,15,150,4,30.0,6,7,150,1,increasing
+164,Matt O'Riley,15,0,0,0.0,10,13,0,0,stable
+165,Abdallah Sima,15,0,0,0.0,10,15,0,0,stable
+166,Yasin Ayari,15,270,3,54.0,2,2,689,7,decreasing
+167,Carlos Baleba,15,261,5,52.2,0,0,590,5,stable
+169,Diego Gómez Amarilla,15,416,5,83.2,0,1,721,8,increasing
+170,James Milner,15,0,0,0.0,7,6,63,0,decreasing
+171,Jeremy Sarmiento Morante,15,0,0,0.0,10,15,0,0,stable
+172,Tom Watson,15,0,0,0.0,8,8,40,0,decreasing
+173,Mats Wieffer,15,450,5,90.0,0,2,820,9,stable
+174,Malick Yalcouyé,15,0,0,0.0,10,15,0,0,stable
+175,Joe Knight,15,0,0,0.0,9,9,1,0,decreasing
+176,Adrian Mazilu,15,0,0,0.0,10,15,0,0,stable
+177,Andrew Moran,15,0,0,0.0,10,15,0,0,stable
+178,Danny Welbeck,15,351,5,70.2,0,0,724,8,stable
+179,Evan Ferguson,15,0,0,0.0,10,15,0,0,stable
+180,Stefanos Tzimas,15,53,3,10.6,2,3,109,0,stable
+181,Charalampos Kostoulas,15,46,3,9.2,4,7,60,0,increasing
+744,Nehemiah Oriola,8,0,0,0.0,7,5,1,0,insufficient_data
+168,Facundo Buonanotte,15,0,0,0.0,10,11,0,0,stable
+220,Robert Lynch Sánchez,15,450,5,90.0,0,0,900,10,stable
+221,Filip Jörgensen,15,0,0,0.0,10,10,0,0,stable
+222,Mike Penders,15,0,0,0.0,10,15,0,0,stable
+223,Gabriel Słonina,15,0,0,0.0,10,15,0,0,stable
+224,Marc Cucurella Saseta,15,450,5,90.0,0,0,900,10,stable
+225,Reece James,15,238,4,47.6,1,1,688,7,decreasing
+226,Trevoh Chalobah,15,450,5,90.0,1,1,772,8,increasing
+227,Levi Samuels Colwill,15,0,0,0.0,10,15,0,0,stable
+228,Malo Gusto,15,324,5,64.8,1,1,602,6,stable
+229,Benoît Badiashile Mukinayi,15,90,2,18.0,6,5,155,0,increasing
+230,Wesley Fofana,15,270,3,54.0,6,4,358,4,increasing
+231,Mamadou Sarr,15,0,0,0.0,10,15,0,0,stable
+232,Tosin Adarabioyo,15,180,2,36.0,5,2,204,2,increasing
+233,Josh Acheampong,15,0,0,0.0,6,6,258,3,decreasing
+234,Aarón Anselmino,15,0,0,0.0,10,15,0,0,stable
+235,Cole Palmer,15,86,2,17.2,8,8,86,0,increasing
+236,Pedro Lomba Neto,15,391,5,78.2,0,0,788,9,stable
+237,Enzo Fernández,15,442,5,88.4,1,1,802,9,stable
+238,Estêvão Almeida de Oliveira Gonçalves,15,129,4,25.8,1,1,256,1,stable
+239,Jamie Bynoe-Gittens,15,157,3,31.4,3,2,255,2,increasing
+240,Christopher Nkunku,15,0,0,0.0,10,15,0,0,stable
+241,Moisés Caicedo Corozo,15,127,2,25.4,3,2,532,5,decreasing
+243,Tyrique George,15,0,0,0.0,9,6,5,0,decreasing
+244,Roméo Lavia,15,0,0,0.0,6,5,105,0,decreasing
+245,Mykhailo Mudryk,15,0,0,0.0,10,15,0,0,stable
+246,Andrey Nascimento dos Santos,15,173,3,34.6,4,1,276,2,increasing
+247,Dário Luís Essugo,15,0,0,0.0,10,15,0,0,stable
+248,Kendry Páez Andrade,15,0,0,0.0,10,15,0,0,stable
+249,João Pedro Junqueira de Jesus,15,333,5,66.6,0,0,760,8,stable
+250,Liam Delap,15,255,5,51.0,5,7,255,3,increasing
+251,Nicolas Jackson,15,0,0,0.0,10,15,0,0,stable
+252,Marc Guiu Paz,15,98,4,19.6,3,3,234,1,stable
+453,Alejandro Garnacho Ferreyra,15,240,4,48.0,2,3,481,4,stable
+672,Jorrel Hato,15,0,0,0.0,8,8,100,1,decreasing
+743,Landon Emenalo,9,0,0,0.0,9,9,0,0,insufficient_data
+253,Dean Henderson,15,450,5,90.0,0,0,900,10,stable
+254,Walter Benítez,15,0,0,0.0,10,15,0,0,stable
+255,Remi Matthews,15,0,0,0.0,10,15,0,0,stable
+256,Daniel Muñoz Mejía,15,360,4,72.0,1,1,810,9,stable
+257,Maxence Lacroix,15,450,5,90.0,0,0,900,10,stable
+258,Tyrick Mitchell,15,444,5,88.8,0,0,894,10,stable
+259,Borna Sosa,15,0,0,0.0,9,8,1,0,decreasing
+260,Marc Guéhi,15,360,4,72.0,1,1,810,9,stable
+261,Chris Richards,15,442,5,88.4,0,0,892,10,stable
+262,Chadi Riad Dnanou,15,0,0,0.0,10,15,0,0,stable
+263,Nathaniel Clyne,15,76,1,15.2,9,11,76,1,increasing
+264,Rob Holding,15,0,0,0.0,10,15,0,0,stable
+265,Caleb Kporha,15,0,0,0.0,10,15,0,0,stable
+267,Ismaïla Sarr,15,217,3,43.4,2,2,649,7,decreasing
+268,Cheick Doucouré,15,0,0,0.0,10,15,0,0,stable
+269,Romain Esse,15,0,0,0.0,10,13,0,0,stable
+270,Will Hughes,15,34,4,6.8,3,2,90,0,decreasing
+271,Daichi Kamada,15,424,5,84.8,0,2,835,10,stable
+272,Jefferson Lerma Solís,15,219,5,43.8,1,1,334,3,increasing
+273,Adam Wharton,15,397,5,79.4,1,1,728,9,stable
+274,Asher Agbinone,15,0,0,0.0,10,15,0,0,stable
+275,Naouirou Ahamada,15,0,0,0.0,10,15,0,0,stable
+276,Justin Devenny,15,41,4,8.2,3,2,56,0,increasing
+277,Malcolm Ebiowei,15,0,0,0.0,10,15,0,0,stable
+278,Jesurun Rak-Sakyi,15,0,0,0.0,10,15,0,0,stable
+279,Matheus França de Oliveira,15,0,0,0.0,10,15,0,0,stable
+280,David Ozoh,15,0,0,0.0,10,15,0,0,stable
+281,Kaden Rodney,15,0,0,0.0,10,15,0,0,stable
+282,Franco Umeh-Chibueze,15,0,0,0.0,10,15,0,0,stable
+283,Jean-Philippe Mateta,15,367,5,73.4,0,0,795,9,stable
+284,Eddie Nketiah,15,172,4,34.4,2,4,264,1,increasing
+285,Odsonne Édouard,15,0,0,0.0,10,13,0,0,stable
+286,Zach Marsh,15,0,0,0.0,10,15,0,0,stable
+690,Rio Cardines,15,0,0,0.0,10,15,0,0,stable
+712,Yéremy Pino Santos,13,334,5,66.8,0,0,692,8,stable
+723,Jaydee Canvot,12,112,4,22.4,5,6,113,1,increasing
+732,Christantus Uche,12,36,2,7.2,6,3,38,0,increasing
+242,Kiernan Dewsbury-Hall,15,445,5,89.0,1,1,792,9,stable
+287,Jordan Pickford,15,450,5,90.0,0,0,900,10,stable
+288,Mark Travers,15,0,0,0.0,10,15,0,0,stable
+289,Harry Tyrer,15,0,0,0.0,10,15,0,0,stable
+290,Jarrad Branthwaite,15,0,0,0.0,10,15,0,0,stable
+291,James Tarkowski,15,450,5,90.0,0,0,900,10,stable
+292,Vitalii Mykolenko,15,450,5,90.0,0,2,900,10,stable
+293,Jake O'Brien,15,351,5,70.2,0,0,768,9,stable
+294,Séamus Coleman,15,9,1,1.8,8,4,10,0,increasing
+295,Michael Keane,15,360,4,72.0,1,1,784,9,stable
+296,Nathan Patterson,15,0,0,0.0,10,15,0,0,stable
+297,Roman Dixon,15,0,0,0.0,10,15,0,0,stable
+298,Reece Welch,15,0,0,0.0,10,15,0,0,stable
+299,Iliman Ndiaye,15,429,5,85.8,0,0,835,10,stable
+300,Dwight McNeil,15,40,4,8.0,4,5,72,0,stable
+301,Carlos Alcaraz Durán,15,198,4,39.6,2,1,323,3,increasing
+302,Idrissa Gana Gueye,15,102,2,20.4,3,3,526,6,decreasing
+303,James Garner,15,450,5,90.0,0,0,900,10,stable
+304,Tim Iroegbunam,15,210,4,42.0,3,2,262,2,increasing
+305,Harrison Armstrong,15,0,0,0.0,10,13,0,0,stable
+306,Callum Bates,15,0,0,0.0,10,15,0,0,stable
+307,Coby Ebere,15,0,0,0.0,10,15,0,0,stable
+308,Isaac Heath,15,0,0,0.0,10,15,0,0,stable
+309,Jenson Metcalfe,15,0,0,0.0,10,15,0,0,stable
+310,Thierno Barry,15,384,5,76.8,0,0,545,5,increasing
+311,Norberto Bercique Gomes Betuncal,15,61,5,12.2,0,0,346,3,decreasing
+312,Youssef Ramalho Chermiti,15,0,0,0.0,10,15,0,0,stable
+313,Martin Sherif,15,0,0,0.0,10,15,0,0,stable
+419,Jack Grealish,15,431,5,86.2,1,1,791,9,stable
+630,Tom King,15,0,0,0.0,10,15,0,0,stable
+667,Adam Aznou,15,0,0,0.0,10,15,0,0,stable
+704,Tyler Onyango,14,0,0,0.0,10,14,0,0,stable
+705,Elijah Campbell,14,0,0,0.0,10,14,0,0,stable
+707,Tyler Dibling,13,14,2,2.8,5,4,72,0,decreasing
+728,Merlin Röhl,12,23,1,4.6,7,4,67,0,decreasing
+314,Bernd Leno,15,450,5,90.0,0,0,900,10,stable
+315,Steven Benda,15,0,0,0.0,10,15,0,0,stable
+316,Antonee Robinson,15,0,0,0.0,9,9,10,0,decreasing
+317,Joachim Andersen,15,450,5,90.0,1,1,761,8,increasing
+318,Calvin Bassey,15,450,5,90.0,0,0,818,9,stable
+319,Timothy Castagne,15,139,4,27.8,2,2,410,4,decreasing
+320,Issa Diop,15,0,0,0.0,7,6,223,2,decreasing
+321,Jorge Cuenca Barreno,15,0,0,0.0,9,7,81,1,decreasing
+322,Kenny Tete,15,405,5,81.0,3,3,585,6,increasing
+323,Samuel Amissah,15,0,0,0.0,10,15,0,0,stable
+324,Alex Iwobi,15,442,5,88.4,0,0,859,10,stable
+325,Emile Smith Rowe,15,191,5,38.2,0,0,309,2,increasing
+326,Adama Traoré Diarra,15,16,2,3.2,3,3,183,2,decreasing
+327,Andreas Hoelgebaum Pereira,15,0,0,0.0,10,15,0,0,stable
+328,Ryan Sessegnon,15,360,4,72.0,1,1,799,9,stable
+329,Harry Wilson,15,384,5,76.8,1,1,686,8,stable
+330,Sander Berge,15,435,5,87.0,0,0,885,10,stable
+331,Tom Cairney,15,2,1,0.4,5,4,164,2,decreasing
+332,Saša Lukić,15,126,4,25.2,3,1,313,2,decreasing
+333,Martial Godo,15,0,0,0.0,10,15,0,0,stable
+334,Luke Harris,15,0,0,0.0,10,15,0,0,stable
+335,Josh King,15,205,5,41.0,0,0,482,6,stable
+336,Harrison Reed,15,1,1,0.2,9,11,1,0,increasing
+337,Raúl Jiménez Rodríguez,15,400,5,80.0,1,1,661,7,increasing
+338,Rodrigo Muniz Carvalho,15,16,1,3.2,8,4,34,0,stable
+664,Benjamin Lecomte,15,0,0,0.0,10,15,0,0,stable
+727,Samuel Chukwueze,12,257,5,51.4,2,2,303,2,increasing
+731,Kevin Santos Lopes de Macedo,12,188,5,37.6,0,0,379,3,stable
+737,Jonah Kusi-Asare,12,17,1,3.4,8,5,18,0,increasing
+339,Illan Meslier,15,0,0,0.0,10,15,0,0,stable
+340,Alex Cairns,15,0,0,0.0,10,15,0,0,stable
+341,Karl Darlow,15,0,0,0.0,7,7,270,3,decreasing
+342,Jayden Bogle,15,446,5,89.2,0,0,880,10,stable
+343,Pascal Struijk,15,368,5,73.6,2,2,638,7,increasing
+344,Jaka Bijol,15,280,4,56.0,4,8,460,5,increasing
+345,Sebastiaan Bornauw,15,2,2,0.4,8,13,2,0,increasing
+346,Sam Byram,15,0,0,0.0,10,13,0,0,stable
+347,Gabriel Gudmundsson,15,372,5,74.4,0,0,763,8,stable
+348,Joe Rodon,15,450,5,90.0,0,0,900,10,stable
+349,Isaac Schmidt,15,0,0,0.0,10,15,0,0,stable
+350,Brenden Aaronson,15,178,4,35.6,1,1,571,7,decreasing
+351,Wilfried Gnonto,15,80,3,16.0,7,7,80,0,increasing
+352,Jack Harrison,15,8,1,1.6,4,4,177,1,decreasing
+353,Daniel James,15,80,3,16.0,4,3,136,0,increasing
+354,Ethan Ampadu,15,446,5,89.2,0,2,886,10,stable
+355,Sam Greenwood,15,0,0,0.0,10,15,0,0,stable
+356,Ilia Gruev,15,177,3,35.4,6,3,195,2,increasing
+357,Largie Ramazani,15,0,0,0.0,10,15,0,0,stable
+358,Tanaka Ao,15,228,4,45.6,1,2,394,4,increasing
+359,Charlie Crew,15,0,0,0.0,10,15,0,0,stable
+360,Joe Gelhardt,15,0,0,0.0,10,15,0,0,stable
+361,Darko Gyabi,15,0,0,0.0,10,15,0,0,stable
+362,Joël Piroe,15,33,4,6.6,4,4,61,0,stable
+363,Patrick Bamford,15,0,0,0.0,10,15,0,0,stable
+364,Mateo Joseph Fernández-Regatillo,15,0,0,0.0,10,15,0,0,stable
+365,Lukas Nmecha,15,290,4,58.0,1,1,354,4,increasing
+493,Sean Longstaff,15,163,2,32.6,3,3,582,6,decreasing
+660,Anton Stach,15,292,4,58.4,2,1,550,6,stable
+665,Lucas Estella Perri,15,450,5,90.0,3,5,630,7,increasing
+691,Dominic Calvert-Lewin,14,255,5,51.0,0,1,675,7,decreasing
+698,Noah Okafor,14,264,5,52.8,1,1,529,6,stable
+706,James Justin,13,71,2,14.2,5,2,131,1,stable
+741,Harry Gray,11,0,0,0.0,10,11,0,0,stable
+366,Alisson Becker,15,360,4,72.0,5,5,450,5,increasing
+367,Giorgi Mamardashvili,15,90,1,18.0,5,6,450,5,decreasing
+368,Ármin Pécsi,15,0,0,0.0,10,15,0,0,stable
+369,Freddie Woodman,15,0,0,0.0,10,15,0,0,stable
+370,Jeremie Frimpong,15,0,0,0.0,8,7,21,0,decreasing
+371,Milos Kerkez,15,279,5,55.8,1,1,573,6,stable
+372,Andrew Robertson,15,167,4,33.4,3,2,321,2,stable
+373,Virgil van Dijk,15,450,5,90.0,0,0,900,10,stable
+374,Ibrahima Konaté,15,414,5,82.8,0,0,812,8,stable
+375,Conor Bradley,15,149,2,29.8,3,3,451,5,decreasing
+376,Joe Gomez,15,183,4,36.6,5,5,190,2,increasing
+377,Konstantinos Tsimikas,15,0,0,0.0,10,15,0,0,stable
+378,Amara Nallo,15,0,0,0.0,10,15,0,0,stable
+379,Rhys Williams,15,0,0,0.0,10,15,0,0,stable
+380,Calvin Ramsay,15,0,0,0.0,10,15,0,0,stable
+381,Mohamed Salah,15,225,3,45.0,2,1,669,7,decreasing
+382,Florian Wirtz,15,313,4,62.6,1,1,554,6,stable
+383,Luis Díaz Marulanda,15,0,0,0.0,10,15,0,0,stable
+384,Cody Gakpo,15,341,5,68.2,0,0,716,7,stable
+385,Federico Chiesa,15,33,3,6.6,4,1,96,0,decreasing
+386,Alexis Mac Allister,15,348,5,69.6,0,1,676,8,stable
+387,Dominik Szoboszlai,15,450,5,90.0,0,0,900,10,stable
+388,Curtis Jones,15,223,5,44.6,1,1,379,3,increasing
+390,Ryan Gravenberch,15,450,5,90.0,1,1,781,9,increasing
+392,Endo Wataru,15,7,1,1.4,8,7,11,0,increasing
+393,Stefan Bajčetić Maquieira,15,0,0,0.0,10,15,0,0,stable
+394,James McConnell,15,0,0,0.0,10,15,0,0,stable
+395,Tyler Morton,15,0,0,0.0,10,15,0,0,stable
+396,Trey Nyoni,15,0,0,0.0,10,15,0,0,stable
+397,Darwin Núñez Ribeiro,15,0,0,0.0,10,15,0,0,stable
+398,Jayden Danns,15,0,0,0.0,10,15,0,0,stable
+499,Alexander Isak,15,225,4,45.0,3,4,452,6,stable
+661,Hugo Ekitiké,15,211,5,42.2,1,1,421,3,stable
+686,Rio Ngumoha,15,12,1,2.4,7,3,38,0,decreasing
+692,Giovanni Leoni,14,0,0,0.0,10,14,0,0,stable
+746,Kieran Morrison,7,0,0,0.0,7,7,0,0,insufficient_data
+182,James Trafford,15,0,0,0.0,10,12,0,0,stable
+399,Ederson Santana de Moraes,15,0,0,0.0,10,15,0,0,stable
+400,Stefan Ortega Moreno,15,0,0,0.0,10,15,0,0,stable
+401,Marcus Bettinelli,15,0,0,0.0,10,15,0,0,stable
+402,Rayan Aït-Nouri,15,0,0,0.0,9,6,1,0,decreasing
+403,Joško Gvardiol,15,429,5,85.8,1,3,768,9,stable
+404,Manuel Akanji,15,0,0,0.0,10,15,0,0,stable
+405,Nathan Aké,15,21,2,4.2,6,5,131,1,decreasing
+406,Abdukodir Khusanov,15,0,0,0.0,10,10,0,0,stable
+407,Matheus Nunes,15,450,5,90.0,0,1,900,10,stable
+408,Rúben dos Santos Gato Alves Dias,15,450,5,90.0,0,0,900,10,stable
+409,John Stones,15,27,2,5.4,7,3,87,1,decreasing
+410,Rico Lewis,15,8,1,1.6,7,6,20,0,decreasing
+411,Nico O'Reilly,15,450,5,90.0,0,1,825,9,stable
+412,Vitor de Oliveira Nunes dos Reis,15,0,0,0.0,10,15,0,0,stable
+413,Omar Marmoush,15,41,4,8.2,4,5,55,0,increasing
+414,Phil Foden,15,424,5,84.8,0,1,873,10,stable
+415,Sávio Moreira de Oliveira,15,85,4,17.0,1,3,420,4,decreasing
+416,Bernardo Mota Veiga de Carvalho e Silva,15,425,5,85.0,0,0,626,7,increasing
+417,Rayan Cherki,15,232,5,46.4,2,5,323,3,increasing
+418,Jérémy Doku,15,391,5,78.2,0,0,654,7,increasing
+420,İlkay Gündoğan,15,0,0,0.0,10,15,0,0,stable
+421,Rodrigo 'Rodri' Hernandez Cascante,15,0,0,0.0,8,5,22,0,decreasing
+422,Mateo Kovačić,15,0,0,0.0,9,7,4,0,decreasing
+423,Nico González Iglesias,15,423,5,84.6,0,1,785,9,stable
+424,Oscar Bobb,15,13,1,2.6,5,3,207,2,decreasing
+425,Claudio Echeverri,15,0,0,0.0,10,15,0,0,stable
+427,Tijjani Reijnders,15,189,4,37.8,1,1,496,5,decreasing
+428,Sverre Nypan,15,0,0,0.0,10,15,0,0,stable
+429,Kalvin Phillips,15,0,0,0.0,10,15,0,0,stable
+430,Erling Haaland,15,428,5,85.6,0,0,869,10,stable
+736,Gianluigi Donnarumma,12,450,5,90.0,0,0,900,10,stable
+739,Divine Mukasa,12,0,0,0.0,10,12,0,0,stable
+740,Stephen Mfuni,12,0,0,0.0,10,12,0,0,stable
+742,Ryan McAidoo,10,0,0,0.0,10,10,0,0,stable
+119,Bryan Mbeumo,15,450,5,90.0,0,0,886,10,stable
+431,Altay Bayındır,15,0,0,0.0,9,9,90,1,decreasing
+432,André Onana,15,0,0,0.0,10,15,0,0,stable
+433,Elyh Harrison,15,0,0,0.0,10,15,0,0,stable
+434,Tom Heaton,15,0,0,0.0,10,15,0,0,stable
+435,Dermot Mee,15,0,0,0.0,10,15,0,0,stable
+436,Matthijs de Ligt,15,270,3,54.0,2,2,720,8,decreasing
+437,Lisandro Martínez,15,31,3,6.2,7,12,31,0,increasing
+438,Noussair Mazraoui,15,296,5,59.2,4,4,309,2,increasing
+439,Diego León Blanco,15,0,0,0.0,10,15,0,0,stable
+440,Diogo Dalot Teixeira,15,282,5,56.4,0,2,682,8,stable
+441,Patrick Dorgu,15,165,5,33.0,0,1,348,2,stable
+442,Harry Maguire,15,71,1,14.2,6,4,231,3,decreasing
+443,Luke Shaw,15,438,5,87.6,0,0,846,10,stable
+444,Leny Yoro,15,227,5,45.4,0,0,506,4,stable
+445,Harry Amass,15,0,0,0.0,10,15,0,0,stable
+446,Tyler Fredricson,15,0,0,0.0,10,15,0,0,stable
+447,Ayden Heaven,15,113,2,22.6,7,6,138,1,increasing
+448,Tyrell Malacia,15,0,0,0.0,10,15,0,0,stable
+449,Bruno Borges Fernandes,15,450,5,90.0,0,0,894,10,stable
+450,Matheus Santos Carneiro da Cunha,15,237,3,47.4,2,2,613,7,decreasing
+451,Marcus Rashford,15,0,0,0.0,10,15,0,0,stable
+452,Amad Diallo,15,450,5,90.0,1,1,757,8,increasing
+454,Antony dos Santos,15,0,0,0.0,10,15,0,0,stable
+455,Mason Mount,15,248,5,49.6,2,2,381,4,increasing
+457,Carlos Henrique Casimiro,15,385,5,77.0,1,1,685,7,stable
+458,Kobbie Mainoo,15,45,3,9.0,3,2,107,0,stable
+459,Manuel Ugarte Ribeiro,15,31,2,6.2,4,2,142,1,decreasing
+460,Toby Collyer,15,0,0,0.0,10,15,0,0,stable
+461,Jayce Fitzgerald,15,0,0,0.0,10,15,0,0,stable
+462,Jack Fletcher,15,0,0,0.0,10,15,0,0,stable
+463,Sékou Koné,15,0,0,0.0,10,15,0,0,stable
+464,Jack Moorhouse,15,0,0,0.0,10,15,0,0,stable
+465,Rasmus Højlund,15,0,0,0.0,10,15,0,0,stable
+466,Joshua Zirkzee,15,263,4,52.6,4,2,276,3,increasing
+467,Chido Obi,15,0,0,0.0,10,15,0,0,stable
+468,Ethan Wheatley,15,0,0,0.0,10,15,0,0,stable
+681,Benjamin Sesko,15,32,1,6.4,4,4,412,4,decreasing
+733,Senne Lammens,12,450,5,90.0,1,3,810,9,stable
+755,Shea Lacey,4,0,0,0.0,4,4,0,0,insufficient_data
+52,Jacob Ramsey,15,175,3,35.0,5,4,240,2,increasing
+135,Yoane Wissa,15,16,1,3.2,9,14,16,0,increasing
+469,Nick Pope,15,166,2,33.2,3,3,616,7,decreasing
+471,Mark Gillespie,15,0,0,0.0,10,15,0,0,stable
+472,Odysseas Vlachodimos,15,0,0,0.0,10,15,0,0,stable
+473,Lewis Hall,15,295,5,59.0,5,5,295,3,increasing
+474,Fabian Schär,15,182,4,36.4,4,4,256,2,increasing
+475,Sven Botman,15,103,2,20.6,3,3,497,6,decreasing
+476,Dan Burn,15,314,4,62.8,1,1,764,9,decreasing
+477,Tino Livramento,15,360,4,72.0,5,5,436,5,increasing
+478,Kieran Trippier,15,90,1,18.0,5,4,383,4,decreasing
+479,Emil Krafth,15,0,0,0.0,9,9,45,0,decreasing
+480,Jamaal Lascelles,15,0,0,0.0,9,9,13,0,decreasing
+481,Alex Murphy,15,0,0,0.0,10,15,0,0,stable
+482,Harrison Ashby,15,0,0,0.0,10,15,0,0,stable
+483,Miodrag Pivaš,15,0,0,0.0,10,15,0,0,stable
+484,Matt Targett,15,0,0,0.0,10,15,0,0,stable
+485,Anthony Gordon,15,98,3,19.6,2,3,422,5,decreasing
+486,Anthony Elanga,15,202,5,40.4,0,0,367,3,stable
+487,Harvey Barnes,15,295,4,59.0,1,1,390,4,increasing
+488,Bruno Guimarães Rodriguez Moura,15,404,5,80.8,0,1,849,9,stable
+489,Jacob Murphy,15,231,3,46.2,2,1,497,6,stable
+490,Joelinton Cássio Apolinário de Lira,15,309,5,61.8,0,1,714,7,stable
+491,Sandro Tonali,15,213,5,42.6,0,0,581,6,decreasing
+492,Antoñito Cordero Campillo,15,0,0,0.0,10,15,0,0,stable
+494,Joe Willock,15,99,4,19.8,6,5,99,1,increasing
+495,Isaac Hayden,15,0,0,0.0,10,15,0,0,stable
+496,Garang Kuol,15,0,0,0.0,10,15,0,0,stable
+497,Lewis Miley,15,208,4,41.6,3,1,314,3,increasing
+498,Joe White,15,0,0,0.0,10,15,0,0,stable
+500,William Osula,15,0,0,0.0,5,5,77,0,decreasing
+501,Sean Neave,15,0,0,0.0,10,15,0,0,stable
+674,Aaron Ramsdale,15,283,4,56.6,6,10,283,3,increasing
+684,Malick Thiaw,15,450,5,90.0,0,2,900,10,stable
+689,Seung-Soo Park,15,0,0,0.0,10,15,0,0,stable
+714,Nick Woltemade,12,426,5,85.2,0,0,802,9,stable
+753,John Ruddy,4,0,0,0.0,4,4,0,0,insufficient_data
+12,Oleksandr Zinchenko,15,0,0,0.0,8,7,163,2,decreasing
+426,James McAtee,15,5,1,1.0,8,6,64,0,decreasing
+502,Matz Sels,15,450,5,90.0,0,0,900,10,stable
+503,Carlos Miguel dos Santos Pereira,15,0,0,0.0,10,15,0,0,stable
+504,Matt Turner,15,0,0,0.0,10,15,0,0,stable
+505,Nikola Milenković,15,450,5,90.0,0,0,900,10,stable
+506,Murillo Costa dos Santos,15,180,2,36.0,5,3,433,5,stable
+507,Ola Aina,15,0,0,0.0,10,12,0,0,stable
+508,Neco Williams,15,450,5,90.0,0,0,900,10,stable
+509,David Mota Veiga Teixeira do Carmo,15,0,0,0.0,10,15,0,0,stable
+510,Jair Paula da Cunha Filho,15,0,0,0.0,9,8,90,1,decreasing
+511,Felipe Rodrigues da Silva,15,272,4,54.4,3,3,528,6,stable
+512,Omar Richards,15,0,0,0.0,10,15,0,0,stable
+513,Zach Abbott,15,45,1,9.0,9,14,45,0,increasing
+514,Willy Boly,15,0,0,0.0,10,15,0,0,stable
+515,Morgan Gibbs-White,15,441,5,88.2,0,0,844,9,stable
+516,Callum Hudson-Odoi,15,117,4,23.4,1,1,345,1,decreasing
+517,Elliot Anderson,15,450,5,90.0,0,0,900,10,stable
+518,João Pedro Ferreira da Silva,15,0,0,0.0,10,14,0,0,stable
+519,Nicolás Domínguez,15,192,5,38.4,3,5,244,1,increasing
+520,Lewis O'Brien,15,0,0,0.0,10,15,0,0,stable
+521,Ibrahim Sangaré,15,332,5,66.4,3,2,423,4,increasing
+522,Ryan Yates,15,90,5,18.0,2,2,274,2,decreasing
+523,Eric da Silva Moreira,15,0,0,0.0,10,15,0,0,stable
+524,Marko Stamenić,15,0,0,0.0,10,15,0,0,stable
+525,Chris Wood,15,0,0,0.0,7,7,168,2,decreasing
+526,Igor Jesus Maciel da Cruz,15,397,5,79.4,0,1,620,5,increasing
+527,Taiwo Awoniyi,15,31,1,6.2,6,7,133,0,decreasing
+669,Dan Ndoye,15,331,5,66.2,1,1,626,6,stable
+675,Angus Gunn,15,0,0,0.0,10,15,0,0,stable
+693,Omari Hutchinson,14,285,5,57.0,2,2,373,2,increasing
+696,Arnaud Kalimuendo,14,15,1,3.0,7,3,17,0,increasing
+699,Douglas Luiz Soares de Paulo,14,0,0,0.0,7,5,110,0,decreasing
+715,John Victor Maciel Furtado,12,0,0,0.0,10,12,0,0,stable
+716,Nicolò Savona,12,405,5,81.0,1,2,691,7,increasing
+729,Luis Eduardo Soares da Silva,12,0,0,0.0,10,12,0,0,stable
+734,Dilane Bakwa,12,0,0,0.0,8,8,84,1,decreasing
+528,Anthony Patterson,15,0,0,0.0,10,15,0,0,stable
+529,Simon Moore,15,0,0,0.0,10,15,0,0,stable
+530,Blondy Nna Noukeu,15,0,0,0.0,10,15,0,0,stable
+531,Daniel Ballard,15,450,5,90.0,0,2,788,8,increasing
+532,Trai Hume,15,383,5,76.6,0,0,821,9,stable
+533,Aji Alese,15,0,0,0.0,10,15,0,0,stable
+534,Joe Anderson,15,0,0,0.0,10,15,0,0,stable
+535,Dennis Cirkin,15,0,0,0.0,10,15,0,0,stable
+536,Leo Fuhr Hjelde,15,0,0,0.0,10,15,0,0,stable
+537,Niall Huggins,15,0,0,0.0,10,15,0,0,stable
+538,Zak Johnson,15,0,0,0.0,10,15,0,0,stable
+539,Luke O'Nien,15,4,2,0.8,8,13,4,0,increasing
+540,Timothée Pembélé,15,0,0,0.0,10,15,0,0,stable
+541,Reinildo Mandava,15,360,4,72.0,4,3,540,6,increasing
+542,Jenson Seelt,15,0,0,0.0,10,13,0,0,stable
+543,Simon Adingra,15,45,3,9.0,5,3,86,0,stable
+544,Habib Diarra,15,0,0,0.0,10,11,0,0,stable
+545,Patrick Roberts,15,0,0,0.0,10,13,0,0,stable
+546,Milan Aleksić,15,0,0,0.0,10,15,0,0,stable
+547,Enzo Le Fée,15,406,5,81.2,0,1,824,10,stable
+548,Romaine Mundle,15,44,2,8.8,8,12,44,0,increasing
+549,Dan Neil,15,0,0,0.0,9,7,1,0,decreasing
+550,Ian Poveda-Ocampo,15,0,0,0.0,10,15,0,0,stable
+551,Chris Rigg,15,0,0,0.0,7,6,148,1,decreasing
+552,Noah Sadiki,15,431,5,86.2,0,0,881,10,stable
+553,Chemsdine Talbi,15,238,5,47.6,0,0,414,3,increasing
+554,Abdoullah Ba,15,0,0,0.0,10,15,0,0,stable
+555,Alan Browne,15,0,0,0.0,10,15,0,0,stable
+556,Pierre Ekwah Elimby,15,0,0,0.0,10,15,0,0,stable
+557,Harrison Jones,15,0,0,0.0,10,15,0,0,stable
+558,Jay Matete,15,0,0,0.0,10,15,0,0,stable
+559,Nectarios Triantis,15,0,0,0.0,10,15,0,0,stable
+560,Wilson Isidor,15,270,5,54.0,0,0,643,7,stable
+561,Eliezer Mayenda Dossou,15,4,2,0.8,6,3,50,0,decreasing
+562,Ahmed Abdullahi,15,0,0,0.0,10,15,0,0,stable
+563,Luís Hemir Silva Semedo,15,0,0,0.0,10,15,0,0,stable
+564,Nazarii Rusyn,15,0,0,0.0,10,15,0,0,stable
+668,Granit Xhaka,15,432,5,86.4,0,0,882,10,stable
+670,Robin Roefs,15,450,5,90.0,0,0,900,10,stable
+678,Arthur Masuaku,15,0,0,0.0,8,8,115,0,decreasing
+683,Omar Alderete,15,270,3,54.0,4,4,540,6,stable
+694,Nordi Mukiele,14,450,5,90.0,0,1,900,10,stable
+724,Lutsharel Geertruida,12,281,5,56.2,0,0,517,5,stable
+730,Brian Brobbey,12,175,5,35.0,1,1,233,1,increasing
+735,Bertrand Traoré,12,243,4,48.6,1,2,538,6,stable
+565,Guglielmo Vicario,15,450,5,90.0,0,0,900,10,stable
+566,Brandon Austin,15,0,0,0.0,10,15,0,0,stable
+567,Antonín Kinský,15,0,0,0.0,10,15,0,0,stable
+568,Pedro Porro Sauceda,15,348,5,69.6,0,0,717,8,stable
+569,Cristian Romero,15,347,4,69.4,3,2,557,6,increasing
+570,Kevin Danso,15,236,5,47.2,1,2,480,4,stable
+571,Ben Davies,15,0,0,0.0,10,15,0,0,stable
+572,Radu Drăgușin,15,0,0,0.0,10,15,0,0,stable
+573,Djed Spence,15,257,3,51.4,3,2,584,7,stable
+574,Destiny Udogie,15,287,4,57.4,3,2,477,5,increasing
+575,Micky van de Ven,15,360,4,72.0,1,1,810,9,stable
+576,Ashley Phillips,15,0,0,0.0,10,15,0,0,stable
+577,Takai Kōta,15,0,0,0.0,10,15,0,0,stable
+578,Luka Vušković,15,0,0,0.0,10,15,0,0,stable
+579,Son Heung-min,15,0,0,0.0,10,15,0,0,stable
+580,Brennan Johnson,15,178,3,35.6,2,1,318,3,stable
+581,James Maddison,15,0,0,0.0,10,15,0,0,stable
+582,Mohammed Kudus,15,332,4,66.4,1,1,768,9,stable
+583,Dejan Kulusevski,15,0,0,0.0,10,15,0,0,stable
+584,Mathys Tel,15,29,3,5.8,3,1,167,1,decreasing
+585,Rodrigo Bentancur,15,260,5,52.0,0,1,645,7,decreasing
+586,Lucas Bergvall,15,152,2,30.4,4,2,275,3,stable
+587,Yves Bissouma,15,0,0,0.0,10,15,0,0,stable
+588,Wilson Odobert,15,159,5,31.8,1,1,350,3,stable
+589,Manor Solomon,15,0,0,0.0,10,15,0,0,stable
+590,Bryan Gil Salvatierra,15,0,0,0.0,10,15,0,0,stable
+591,Archie Gray,15,152,3,30.4,7,7,152,1,increasing
+592,Mikey Moore,15,0,0,0.0,10,15,0,0,stable
+593,Pape Matar Sarr,15,223,5,44.6,0,1,358,3,increasing
+594,Yang Min-hyeok,15,0,0,0.0,10,15,0,0,stable
+595,Callum Olusesi,15,0,0,0.0,10,15,0,0,stable
+596,Dominic Solanke-Mitchell,15,0,0,0.0,10,13,0,0,stable
+597,Richarlison de Andrade,15,342,5,68.4,0,0,536,4,increasing
+598,Will Lankshear,15,0,0,0.0,10,15,0,0,stable
+599,Dane Scarlett,15,0,0,0.0,10,15,0,0,stable
+673,João Maria Lobo Alves Palhares Costa Palhinha Gonçalves,15,252,4,50.4,1,1,702,7,decreasing
+717,Xavi Simons,12,256,5,51.2,0,0,609,7,stable
+726,Randal Kolo Muani,12,308,5,61.6,2,4,452,5,increasing
+745,Jun'ai Byfield,8,0,0,0.0,8,8,0,0,insufficient_data
+750,James Rowswell,5,0,0,0.0,5,5,0,0,insufficient_data
+751,Yusuf Akhamrich,5,0,0,0.0,5,5,0,0,insufficient_data
+149,Igor Julio dos Santos de Paulo,15,97,2,19.4,6,5,103,1,increasing
+600,Alphonse Areola,15,450,5,90.0,0,4,900,10,stable
+601,Wes Foderingham,15,0,0,0.0,10,15,0,0,stable
+602,Krisztián Hegyi,15,0,0,0.0,10,15,0,0,stable
+603,El Hadji Malick Diouf,15,442,5,88.4,0,0,847,9,stable
+604,Emerson Palmieri dos Santos,15,0,0,0.0,10,15,0,0,stable
+605,Maximilian Kilman,15,273,4,54.6,1,1,723,8,decreasing
+606,Konstantinos Mavropanos,15,270,3,54.0,4,4,495,5,stable
+607,Nayef Aguerd,15,0,0,0.0,10,13,0,0,stable
+608,Ollie Scarles,15,0,0,0.0,8,7,69,0,decreasing
+609,Jean-Clair Todibo,15,450,5,90.0,2,5,720,8,increasing
+610,Aaron Wan-Bissaka,15,450,5,90.0,1,4,741,8,increasing
+611,Kaelan Casey,15,0,0,0.0,10,15,0,0,stable
+612,Lucas Tolentino Coelho de Lima,15,246,3,49.2,2,1,696,8,decreasing
+613,Tomáš Souček,15,158,5,31.6,2,3,321,3,stable
+614,James Ward-Prowse,15,0,0,0.0,10,10,0,0,stable
+615,Crysencio Summerville,15,153,2,30.6,3,3,565,7,decreasing
+616,Edson Álvarez Velázquez,15,0,0,0.0,10,15,0,0,stable
+617,Maxwel Cornet,15,0,0,0.0,10,15,0,0,stable
+618,Guido Rodríguez,15,63,1,12.6,8,6,82,1,increasing
+619,Luis Guilherme Lira dos Santos,15,67,2,13.4,7,5,80,0,increasing
+620,George Earthy,15,0,0,0.0,10,15,0,0,stable
+621,Andy Irving,15,7,1,1.4,6,4,132,2,decreasing
+622,Lewis Orford,15,0,0,0.0,10,15,0,0,stable
+623,Freddie Potts,15,346,5,69.2,1,3,522,5,increasing
+624,Jarrod Bowen,15,450,5,90.0,0,0,900,10,stable
+625,Niclas Füllkrug,15,28,2,5.6,6,4,178,2,decreasing
+626,Callum Marshall,15,0,0,0.0,8,7,58,0,decreasing
+659,Kyle Walker-Peters,15,52,2,10.4,3,3,220,1,decreasing
+671,Callum Wilson,15,302,5,60.4,3,3,427,5,increasing
+679,Mads Hermansen,15,0,0,0.0,10,11,0,0,stable
+708,Mateus Gonçalo Espanha Fernandes,13,424,5,84.8,0,0,758,8,stable
+718,Soungoutou Magassa,12,184,4,36.8,3,1,313,3,increasing
+738,Lukasz Fabianski,12,0,0,0.0,10,12,0,0,stable
+747,Ezra Mayers,6,7,1,1.4,5,5,7,0,insufficient_data
+752,Airidas Golambeckis,5,0,0,0.0,5,5,0,0,insufficient_data
+758,Mohamadou Kanté,2,7,1,3.5,1,1,7,0,insufficient_data
+627,Sam Johnstone,15,450,5,90.0,0,3,900,10,stable
+628,José Malheiro de Sá,15,0,0,0.0,10,10,0,0,stable
+629,Daniel Bentley,15,0,0,0.0,10,15,0,0,stable
+631,Emmanuel Agbadou,15,360,4,72.0,3,2,470,4,increasing
+632,Matt Doherty,15,0,0,0.0,8,7,111,1,decreasing
+633,Hugo Bueno López,15,125,4,25.0,1,1,555,6,decreasing
+634,Yerson Mosquera Valdelamar,15,246,3,49.2,5,3,292,3,increasing
+635,Rodrigo Martins Gomes,15,0,0,0.0,8,6,166,2,decreasing
+636,Santiago Ignacio Bueno,15,90,1,18.0,4,4,540,6,decreasing
+637,Toti Gomes,15,429,5,85.8,3,3,475,5,increasing
+638,Ki-Jana Hoever,15,94,2,18.8,5,5,237,2,decreasing
+639,Bastien Meupiyou Menadjou,15,0,0,0.0,10,15,0,0,stable
+640,Pedro Cardoso de Lima,15,0,0,0.0,10,15,0,0,stable
+641,Alfie Pond,15,0,0,0.0,10,15,0,0,stable
+642,Hwang Hee-chan,15,116,3,23.2,4,1,242,1,stable
+643,André Trindade da Costa Neto,15,450,5,90.0,0,0,801,9,stable
+644,Jean-Ricner Bellegarde,15,280,5,56.0,1,1,473,5,increasing
+645,Fer López González,15,36,1,7.2,8,6,50,0,increasing
+646,João Victor Gomes da Silva,15,354,4,70.8,1,1,649,7,stable
+647,Gonçalo Manuel Ganchinho Guedes,15,0,0,0.0,10,15,0,0,stable
+648,Marshall Munetsi,15,90,3,18.0,2,1,533,6,decreasing
+649,Boubacar Traoré,15,0,0,0.0,10,15,0,0,stable
+650,Tawanda Chirewa,15,21,1,4.2,9,12,21,0,increasing
+651,Tom Edozie,15,0,0,0.0,10,15,0,0,stable
+652,Enso González Medina,15,0,0,0.0,10,15,0,0,stable
+653,Joe Hodge,15,0,0,0.0,10,15,0,0,stable
+654,Jørgen Strand Larsen,15,428,5,85.6,0,2,842,10,stable
+655,Fábio Soares Silva,15,0,0,0.0,10,15,0,0,stable
+656,Saša Kalajdžić,15,0,0,0.0,10,12,0,0,stable
+657,Leon Chiwome,15,0,0,0.0,10,15,0,0,stable
+658,Nathan Fraser,15,0,0,0.0,10,15,0,0,stable
+663,Jhon Arias,15,251,4,50.2,1,1,619,7,decreasing
+682,David Møller Wolfe,15,343,4,68.6,4,3,361,4,increasing
+695,Jackson Tchatchoua,14,354,5,70.8,0,0,561,5,increasing
+709,Ladislav Krejcí,13,254,3,50.8,2,2,704,8,decreasing
+720,Tolu Arokodare,12,97,4,19.4,1,1,150,1,increasing
+749,Mateus Mané,5,62,4,12.4,1,1,62,0,insufficient_data

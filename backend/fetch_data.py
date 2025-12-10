@@ -15,7 +15,7 @@ def fetch_basic_player_data():
     Fetch basic player data from FPL bootstrap-static endpoint
     This includes current season stats, team info, and basic metrics
     """
-    print(" FETCHING BASIC PLAYER DATA")
+    print("FETCHING BASIC PLAYER DATA")
     
     # Fetch from FPL API
     url = "https://fantasy.premierleague.com/api/bootstrap-static/"
@@ -35,7 +35,7 @@ def fetch_basic_player_data():
     teams = data['teams']
     events = data['events']  # Gameweeks
     
-    print(f"\n📊 Data Summary:")
+    print(f"\nData Summary:")
     print(f"   Players: {len(players)}")
     print(f"   Teams: {len(teams)}")
     print(f"   Gameweeks: {len(events)}")
@@ -104,14 +104,11 @@ def fetch_basic_player_data():
             'news': player['news'],
             'news_added': player['news_added'],
             
-            # Performance Stats
-            'total_points': player['total_points'],
-            'points_per_game': float(player['points_per_game']) if player['points_per_game'] else 0,
-            'form': float(player['form']) if player['form'] else 0,
-            
-            # Playing Time
+            # Performance Stats (injury-relevant only)
             'minutes': player['minutes'],
             'starts': player['starts'],
+            
+            # Playing Time & Workload
             'expected_starts': float(player['expected_goal_involvements']) if player.get('expected_goal_involvements') else 0,
             
             # Attacking Stats
@@ -183,8 +180,7 @@ def main():
     df = fetch_basic_player_data()
     
     if df is not None:
-        print("BASIC DATA COLLECTION COMPLETE")
-       
+        print(" BASIC DATA COLLECTION COMPLETE")
 
 if __name__ == "__main__":
     main()
