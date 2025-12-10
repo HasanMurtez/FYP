@@ -4,11 +4,9 @@ import json
 
 def fetch_all_players():
    
-    print("=" * 60)
-    print("FETCHING FPL DATA - 2024/2025 SEASON")
-    print("=" * 60)
+    print("FETCHING PL DATA - 2025/2026 SEASON")
     
-    # FPL API endpoint
+    # FPL API
     url = "https://fantasy.premierleague.com/api/bootstrap-static/"
     
     print("\nFetching data from Fantasy Premier League API...")
@@ -21,7 +19,7 @@ def fetch_all_players():
         with open('data/raw/fpl_full_data.json', 'w') as f:
             json.dump(data, f, indent=2)
         
-        print("✅ Data fetched successfully!")
+        print("Y Data fetched successfully!")
         
         # Extract players
         players = data['elements']
@@ -76,7 +74,7 @@ def fetch_all_players():
         # Save to CSV
         df.to_csv('data/raw/fpl_players_2025_26.csv', index=False)
         
-        print(f"\n Saved {len(df)} players to data/raw/fpl_players_2024_25.csv")
+        print(f"\n Saved {len(df)} players to data/raw/fpl_players_2025_26.csv")
         
         return df
     else:
@@ -87,9 +85,7 @@ def analyze_data(df):
     """
     Quick analysis of the fetched data
     """
-    print("\n" + "=" * 60)
     print("DATA SUMMARY")
-    print("=" * 60)
     
     print(f"\nTotal players: {len(df)}")
     
@@ -115,7 +111,7 @@ def analyze_data(df):
         print("\nSample injured/unavailable players:")
         for idx, player in injured_players.head(5).iterrows():
             print(f"  - {player['full_name']} ({player['team']})")
-            print(f"    Status: {player['status']}, News: {player['news'][:60]}...")
+            print(f"    Status: {player['status']}")
     
     # Minutes played stats
     print(f"\nMinutes played stats:")
@@ -141,9 +137,7 @@ def show_sample_data(df):
     """
     Show sample of what the data looks like
     """
-    print("\n" + "=" * 60)
     print("SAMPLE DATA (First 5 Players)")
-    print("=" * 60)
     
     sample = df.head(5)[['full_name', 'team', 'position', 'minutes', 'status', 'news']]
     print(sample.to_string(index=False))
@@ -156,9 +150,7 @@ def main():
         analyze_data(df)
         show_sample_data(df)
         
-        print("\n" + "=" * 60)
         print("DATA FETCHING COMPLETE")
-        print("=" * 60)
         print("\nData Got:")
         print("  1.  Current season player data (2025/2026)")
         print("  2.  Injury status information")
