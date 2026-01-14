@@ -147,11 +147,11 @@ def fetch_basic_player_data():
     # Save to CSV
     output_path = 'data/raw/fpl_players_basic.csv'
     df.to_csv(output_path, index=False)
-    print(f"\n💾 Saved to: {output_path}")
+    print(f"\nSaved to: {output_path}")
     print(f"   Shape: {df.shape[0]} players × {df.shape[1]} columns")
     
     # Display sample
-    print("\n📋 Sample Data (first 3 players):")
+    print("\n Sample Data (first 3 players):")
     print(df[['full_name', 'team_name', 'position', 'status_description', 
               'minutes', 'yellow_cards']].head(3).to_string(index=False))
     

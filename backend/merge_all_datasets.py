@@ -102,7 +102,7 @@ def merge_all_datasets():
     print(f"   Players in high congestion teams: {len(df_merged[df_merged['congestion_level'] == 'High'])}")
     
     # Sample of high-risk players
-    print("\n⚠️  Sample of Potentially High-Risk Players:")
+    print("\n  Sample of Potentially High-Risk Players:")
     high_risk = df_merged[
         (df_merged['times_unavailable_last_10'] >= 3) | 
         (df_merged['status'].isin(['i', 'd'])) |
