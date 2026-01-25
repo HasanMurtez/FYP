@@ -30,10 +30,10 @@ def create_risk_labels(df):
         if row['chance_of_playing_next'] < 25:  
             return 2
         
-        # MEDIUM RISK - Relax the criteria
+        # MEDIUM RISK
         if row['status'] in ['d', 'u']:
             return 1
-        if 3 <= row['times_unavailable_last_10'] <= 6:  # Changed range
+        if 3 <= row['times_unavailable_last_10'] <= 6:  # range
             return 1
         if row['is_overworked'] == 1 and row['injury_prone'] == 1:  # Both must be true
             return 1
@@ -60,7 +60,7 @@ def train_model():
     print("INJURY RISK PREDICTION MODEL TRAINING")
     
     
-    # 1. LOAD DATA
+    #Load Data
     
     
     print("\n Loading dataset...")
@@ -115,12 +115,12 @@ def train_model():
     
     print(f"   Selected {len(features)} features")
     
-  # X = INPUTS (the features/stats)
+  # X = inputs (the features/stats)
     X = df[features].copy()
     y = df['risk_label'].copy()# y = OUTPUT )
     X = X.fillna(0)
     
-    # 4. TRAIN-TEST SPLIT
+    #Train-Test Split
     
     print("\n  Splitting data (75% train, 25% test)...")
     
@@ -133,7 +133,7 @@ def train_model():
     print(f"   Training: {len(X_train)} samples")
     print(f"   Testing: {len(X_test)} samples")
     
-    # 5. HANDLE CLASS IMBALANCE WITH SMOTE
+    # Handle class imbalance with SMOTE
     
     print("\n  Balancing classes with SMOTE...")
     
@@ -148,7 +148,7 @@ def train_model():
     
     print(f"   After SMOTE: {len(X_train_balanced)} samples")
     
-    # 6. SCALE FEATURES
+    #SCALE FEATURES
     
     print("\n Scaling features...")
     
@@ -156,7 +156,7 @@ def train_model():
     X_train_scaled = scaler.fit_transform(X_train_balanced)
     X_test_scaled = scaler.transform(X_test)
     
-    # 7. TRAIN MODEL
+    # TRAIN MODEL
     
     print("\n Training Random Forest Classifier...")
     
@@ -173,7 +173,7 @@ def train_model():
     model.fit(X_train_scaled, y_train_balanced)
     print("Model trained")
     
-    # 8. EVALUATE
+    #EVALUATE
 
     
     print("MODEL EVALUATION")
@@ -186,7 +186,7 @@ def train_model():
     
     print("\n Classification Report:")
     print(classification_report(
-        y_test,# y_test = what the risk ACTUALLY is
+        y_test,# y_test = what the risk actually is
      y_pred, # y_pred what the model thinks the risk is
 
         target_names=['Low Risk', 'Medium Risk', 'High Risk'],
@@ -198,7 +198,7 @@ def train_model():
     print(cm)
     print("   Rows = Actual, Columns = Predicted")
     
-    # 9. FEATURE IMPORTANCE
+    #FEATURE IMPORTANCE
     
     print("TOP 10 MOST IMPORTANT FEATURES")
     
@@ -224,7 +224,7 @@ def train_model():
     print("\n Plot saved: data/processed/feature_importance.png")
     plt.close()
     
-    # 10. SAVE MODEL
+    #SAVE MODEL
     
     print("\n Saving model...")
     os.makedirs('models', exist_ok=True)

@@ -101,7 +101,7 @@ def fetch_fixture_congestion():
     print(f"   Shape: {df_congestion.shape[0]} teams × {df_congestion.shape[1]} columns")
     
     # Display teams with highest congestion
-    print("\n📋 Teams with Highest Fixture Congestion:")
+    print("\n Teams with Highest Fixture Congestion:")
     high_congestion = df_congestion[df_congestion['congestion_level'] == 'High']
     if not high_congestion.empty:
         print(high_congestion[['team_name', 'avg_days_between_fixtures', 
