@@ -15,14 +15,14 @@ def create_risk_labels(df):
     """
     Create injury risk labels based on multiple factors
     
-    HIGH risk (2): Injured, frequently unavailable, or very low chance of playing
-    MEDIUM risk (1): Doubtful, overworked, some unavailability
-    LOW risk(0): Available and not overworked
+    high risk (2): Injured, frequently unavailable, or very low chance of playing
+    medium risk (1): Doubtful, overworked, some unavailability
+    low risk(0): Available and not overworked
     """
     print("\n Creating risk labels...")
     
     def classify_risk(row):
-        # HIGH RISK 
+        # high risk 
         if row['status'] == 'i':  # Actually injured
             return 2
         if row['times_unavailable_last_10'] >= 7:  
@@ -30,7 +30,7 @@ def create_risk_labels(df):
         if row['chance_of_playing_next'] < 25:  
             return 2
         
-        # MEDIUM RISK
+        # medium risk
         if row['status'] in ['d', 'u']:
             return 1
         if 3 <= row['times_unavailable_last_10'] <= 6:  # range
@@ -38,7 +38,7 @@ def create_risk_labels(df):
         if row['is_overworked'] == 1 and row['injury_prone'] == 1:  # Both must be true
             return 1
         
-        # LOW RISK
+        # low risk
         return 0
     
     # Apply the classification to each player in the dataset
@@ -75,11 +75,11 @@ def train_model():
     # Call the function from above to label each player
     df = create_risk_labels(df)
     
-    # 3. SELECT FEATURES
+    # Select Features
     
     print("\n Selecting features.")
 
-     # the columns (statistics) used to predict
+     # the columns used to predict
     features = [
         # Workload 
         'minutes',
