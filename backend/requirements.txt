@@ -1,13 +1,3 @@
-requests
-pandas
-scikit-learn
-joblib
-python-dotenv
-matplotlib
-seaborn
-jupyter
-numpy
-
 # Flask & API
 flask==3.0.0
 flask-cors==4.0.0
@@ -19,11 +9,19 @@ psycopg2-binary==2.9.9
 # Utilities
 python-dotenv==1.0.0
 
-# ML Dependencies (from your existing requirements)
-scikit-learn==1.3.2
+# ML Dependencies
+scikit-learn==1.5.0
+imbalanced-learn==0.14.0
 joblib==1.3.2
 pandas==2.1.4
 numpy==1.26.2
 
-# Data fetching
+# Data Collection
 requests==2.31.0
+
+# Visualization
+matplotlib==3.8.2
+seaborn==0.13.0
+
+# Development
+jupyter==1.0.0
