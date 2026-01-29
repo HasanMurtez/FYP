@@ -165,7 +165,7 @@ def fetch_player_history(df_basic):
 
 def fetch_fixtures():
     """Get fixture congestion data"""
-    print("STEP 3: FETCHING FIXTURE CONGESTION")
+    print(" FETCHING FIXTURE CONGESTION")
     
     url = "https://fantasy.premierleague.com/api/fixtures/"
     print(f"\n Fetching fixtures...")
