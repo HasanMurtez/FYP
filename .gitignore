@@ -1,0 +1,37 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+*.pyc
+# Flask
+instance/
+.webassets-cache
+
+# Environment variables
+.env
+backend/.env
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+# Data files
+data/raw/*.csv
+data/processed/*.csv
+*.pkl
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+# Jupyter
+.ipynb_checkpoints
+
+# Models
+models/*.pkl
