@@ -2,3 +2,12 @@ echo ".env" >> .gitignore
 echo "data/raw/*" >> .gitignore
 echo "*.pyc" >> .gitignore
 echo "__pycache__/" >> .gitignore
+venv/
+env/
+backend/venv/
+backend/.env
+*.pyc
+__pycache__/
+.env
+*.db
+.DS_Store

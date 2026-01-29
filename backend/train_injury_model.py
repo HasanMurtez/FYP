@@ -148,7 +148,7 @@ def train_model():
     
     print(f"   After SMOTE: {len(X_train_balanced)} samples")
     
-    #SCALE FEATURES
+    # SCALE FEATURES
     
     print("\n Scaling features...")
     
