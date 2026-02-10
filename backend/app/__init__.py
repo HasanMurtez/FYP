@@ -22,8 +22,7 @@ def create_app(config_name=None):
     db.init_app(app)
     CORS(app)  # Enable CORS for React frontend
     
-    # Import models (so SQLAlchemy knows about them)
-    # This must be done AFTER db.init_app(app)
+    # Import models 
     with app.app_context():
         from app import models
     
