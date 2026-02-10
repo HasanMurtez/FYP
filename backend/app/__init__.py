@@ -31,6 +31,8 @@ def create_app(config_name=None):
     # app.register_blueprint(teams.bp)
     # app.register_blueprint(players.bp)
     # app.register_blueprint(predictions.bp)
+    from app.routes import register_routes
+    register_routes(app)
     
     # Basic routes
     @app.route('/')
