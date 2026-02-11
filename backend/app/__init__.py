@@ -8,10 +8,6 @@ import os
 db = SQLAlchemy()
 
 def create_app(config_name=None):
-    """
-    Application factory pattern
-    Creates and configures the Flask application
-    """
     if config_name is None:
         config_name = os.environ.get('FLASK_ENV', 'development')
     
@@ -20,21 +16,15 @@ def create_app(config_name=None):
     
     # Initialize extensions
     db.init_app(app)
-    CORS(app)  # Enable CORS for React frontend
+    CORS(app)
     
-    # Import models 
     with app.app_context():
         from app import models
+        
+        # Register routes
+        from app.routes import register_routes
+        register_routes(app)
     
-    # Register blueprints (will add later)
-    # from app.routes import teams, players, predictions
-    # app.register_blueprint(teams.bp)
-    # app.register_blueprint(players.bp)
-    # app.register_blueprint(predictions.bp)
-    from app.routes import register_routes
-    register_routes(app)
-    
-    # Basic routes
     @app.route('/')
     def index():
         return {

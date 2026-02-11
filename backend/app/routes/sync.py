@@ -1,3 +1,4 @@
+
 from flask import Blueprint, jsonify
 import requests
 import time
@@ -11,10 +12,7 @@ FPL_BASE_URL = "https://fantasy.premierleague.com/api"
 
 
 def calculate_features(player_data, history_data):
-    """
-    Calculate engineered features from raw FPL data
-    Same logic as your collect_fpl_data.py
-    """
+    """Calculate engineered features from raw FPL data"""
     history = history_data.get('history', [])
 
     # Last 5 games minutes
@@ -69,19 +67,17 @@ def calculate_features(player_data, history_data):
 
 @sync_bp.route('/api/sync', methods=['POST'])
 def sync_fpl_data():
-    """
-    Fetch latest FPL data and save to database
-    """
+    """Fetch latest FPL data and save to database"""
     try:
-        print("Starting FPL data sync...")
+        print("\n=== Starting FPL data sync ===")
 
-        # Step 1: Fetch bootstrap data (teams + players)
+        #Fetch bootstrap data
         print("Fetching FPL bootstrap data...")
         response = requests.get(f"{FPL_BASE_URL}/bootstrap-static/", timeout=30)
         response.raise_for_status()
         data = response.json()
 
-        teams_data = data['elements']  # This is actually players
+        players_data = data['elements']  # This is players
         raw_teams = data['teams']
         events = data['events']
 
@@ -96,7 +92,7 @@ def sync_fpl_data():
 
         print(f"Current gameweek: {current_gw}")
 
-        # Step 2: Fetch fixture congestion
+        # Fetch fixtures
         print("Fetching fixtures...")
         fixtures_response = requests.get(f"{FPL_BASE_URL}/fixtures/", timeout=30)
         fixtures = fixtures_response.json()
@@ -117,26 +113,23 @@ def sync_fpl_data():
                 'numeric': congestion_map[level]
             }
 
-        # Step 3: Save teams to database
+        # Save teams
         print(f"Saving {len(raw_teams)} teams...")
         teams_saved = 0
-        fpl_id_to_db_id = {}  # Map FPL team ID to database ID
+        fpl_id_to_db_id = {}
 
         for raw_team in raw_teams:
             congestion = team_congestion.get(raw_team['id'], {'total': 3, 'level': 'Medium', 'numeric': 1})
 
-            # Check if team already exists
             team = Team.query.filter_by(fpl_id=raw_team['id']).first()
 
             if team:
-                # Update existing team
                 team.name = raw_team['name']
                 team.short_name = raw_team['short_name']
                 team.strength = raw_team.get('strength', 0)
                 team.total_upcoming_fixtures = congestion['total']
                 team.congestion_level = congestion['level']
             else:
-                # Create new team
                 team = Team(
                     fpl_id=raw_team['id'],
                     name=raw_team['name'],
@@ -147,15 +140,15 @@ def sync_fpl_data():
                 )
                 db.session.add(team)
 
-            db.session.flush()  # Get the ID without committing
+            db.session.flush()
             fpl_id_to_db_id[raw_team['id']] = team.id
             teams_saved += 1
 
         db.session.commit()
         print(f"Saved {teams_saved} teams")
 
-        # Step 4: Save players to database
-        print(f"Saving {len(teams_data)} players...")
+        # Step 4: Save players
+        print(f"\nSaving {len(players_data)} players...")
         position_map = {1: 'GK', 2: 'DEF', 3: 'MID', 4: 'FWD'}
         status_map = {
             'a': 'Available', 'd': 'Doubtful', 'i': 'Injured',
@@ -165,39 +158,47 @@ def sync_fpl_data():
         players_saved = 0
         players_failed = 0
 
-        for idx, player_data in enumerate(teams_data):
+        for idx, player_data in enumerate(players_data):
 
-            # Progress update every 100 players
             if (idx + 1) % 100 == 0:
-                print(f"   Processing player {idx + 1}/{len(teams_data)}...")
+                print(f"Processing player {idx + 1}/{len(players_data)}...")
 
             try:
-                # Fetch player history for feature engineering
+                #Check if player has an ID
+                if not player_data.get('id'):
+                    print(f"Skipping player with no ID: {player_data.get('web_name', 'Unknown')}")
+                    players_failed += 1
+                    continue
+
+                # Fetch player history
                 history_response = requests.get(
                     f"{FPL_BASE_URL}/element-summary/{player_data['id']}/",
                     timeout=15
                 )
                 history_data = history_response.json()
-                time.sleep(0.05)  # Rate limiting
+                time.sleep(0.05)
 
-                # Calculate engineered features
+                # Calculate features
                 features = calculate_features(player_data, history_data)
 
                 # Get team database ID
-                fpl_team_id = player_data['team']
-                db_team_id = fpl_id_to_db_id.get(fpl_team_id)
+                fpl_team_id = player_data.get('team')
+                if not fpl_team_id:
+                    players_failed += 1
+                    continue
 
+                db_team_id = fpl_id_to_db_id.get(fpl_team_id)
                 if not db_team_id:
                     players_failed += 1
                     continue
 
-                # Get congestion for this player's team
                 congestion = team_congestion.get(fpl_team_id, {'numeric': 1})
 
-                # Check if player already exists
+                # Check if player exists
                 player = Player.query.filter_by(fpl_id=player_data['id']).first()
 
                 player_fields = {
+                    'fpl_id': player_data['id'],  # set fpl_id
                     'web_name': player_data['web_name'],
                     'full_name': f"{player_data['first_name']} {player_data['second_name']}",
                     'position': features['position'],
@@ -230,22 +231,22 @@ def sync_fpl_data():
                 }
 
                 if player:
-                    # Update existing player
                     for key, value in player_fields.items():
                         setattr(player, key, value)
                 else:
-                    # Create new player
                     player = Player(**player_fields)
                     db.session.add(player)
 
                 players_saved += 1
 
             except Exception as e:
+                print(f"Error processing player {player_data.get('web_name', 'Unknown')}: {str(e)}")
                 players_failed += 1
+                db.session.rollback()  # Rollback this player
                 continue
 
         db.session.commit()
-        print(f"Sync complete! Saved {players_saved} players, {players_failed} failed")
+        print(f"\nSync complete, Saved {players_saved} players, {players_failed} failed\n")
 
         return jsonify({
             'success': True,
@@ -258,20 +259,9 @@ def sync_fpl_data():
             }
         }), 200
 
-    except requests.exceptions.Timeout:
-        return jsonify({
-            'success': False,
-            'error': 'FPL API request timed out'
-        }), 504
-
-    except requests.exceptions.ConnectionError:
-        return jsonify({
-            'success': False,
-            'error': 'Could not connect to FPL API'
-        }), 503
-
     except Exception as e:
         db.session.rollback()
+        print(f"\nSync failed: {str(e)}\n")
         return jsonify({
             'success': False,
             'error': str(e)
@@ -280,9 +270,7 @@ def sync_fpl_data():
 
 @sync_bp.route('/api/sync/status', methods=['GET'])
 def sync_status():
-    """
-    Check how many teams and players are currently in the database
-    """
+    """Check database status"""
     try:
         team_count = Team.query.count()
         player_count = Player.query.count()
