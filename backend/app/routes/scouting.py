@@ -169,9 +169,9 @@ def find_replacements():
     """
     Smart replacement finder for injured/high-risk players
     Query params:
-    - player_id: ID of player to replace (required)
-    - max_risk: Maximum injury risk level for replacements (Low, Medium, High)
-    - limit: Number of replacements to return (default: 5)
+     player_id: ID of player to replace (required)
+     max_risk: Maximum injury risk level for replacements (Low, Medium, High)
+     limit: Number of replacements to return (default: 5)
     """
     try:
         player_id = request.args.get('player_id')
