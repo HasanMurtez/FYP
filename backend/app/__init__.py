@@ -1,10 +1,10 @@
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from config import config
 import os
 
-# Initialize extensions
 db = SQLAlchemy()
 
 def create_app(config_name=None):
@@ -16,12 +16,18 @@ def create_app(config_name=None):
     
     # Initialize extensions
     db.init_app(app)
-    CORS(app)
+    
+    # Configure CORS
+    CORS(app, resources={
+        r"/api/*": {
+            "origins": ["http://localhost:3000", "http://127.0.0.1:3000"],
+            "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+            "allow_headers": ["Content-Type"]
+        }
+    })
     
     with app.app_context():
         from app import models
-        
-        # Register routes
         from app.routes import register_routes
         register_routes(app)
     
