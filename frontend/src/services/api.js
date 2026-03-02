@@ -1,10 +1,8 @@
 
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:5000';
-
+// Use proxy - no base URL needed
 const api = axios.create({
-  baseURL: BASE_URL,
   timeout: 30000,
 });
 
@@ -13,7 +11,7 @@ export const getTeams = () => api.get('/api/teams');
 export const getTeam = (id) => api.get(`/api/teams/${id}`);
 export const getTeamPlayers = (id, filters = {}) => api.get(`/api/teams/${id}/players`, { params: filters });
 
-// PLAYERS
+// PLAYERS  
 export const getPlayers = (filters = {}) => api.get('/api/players', { params: filters });
 export const getPlayer = (id) => api.get(`/api/players/${id}`);
 export const searchPlayers = (query) => api.get('/api/players/search', { params: { q: query } });

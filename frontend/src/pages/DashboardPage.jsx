@@ -11,8 +11,9 @@ function DashboardPage() {
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
 
-  useEffect(() => {
+ useEffect(() => {
     loadTeamData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [teamId]);
 
   const loadTeamData = async () => {
