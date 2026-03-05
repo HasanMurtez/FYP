@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getTeam, getTeamPlayers } from '../services/api';
+import ScoutingModal from '../components/ScoutingModal';
 import './DashboardPage.css';
 
 function DashboardPage() {
@@ -10,8 +12,9 @@ function DashboardPage() {
   const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
+  const [selectedPlayer, setSelectedPlayer] = useState(null);
 
- useEffect(() => {
+  useEffect(() => {
     loadTeamData();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [teamId]);
@@ -125,12 +128,28 @@ function DashboardPage() {
             {player.news && (
               <p className="player-news">{player.news}</p>
             )}
+
+            {/* Find Replacement Button */}
+            <button
+              className="scout-button"
+              onClick={() => setSelectedPlayer(player)}
+            >
+              🔍 Find Replacement
+            </button>
           </div>
         ))}
       </div>
 
       {filteredPlayers.length === 0 && (
         <p className="no-results">No players match this filter</p>
+      )}
+
+      {/* Scouting Modal */}
+      {selectedPlayer && (
+        <ScoutingModal
+          player={selectedPlayer}
+          onClose={() => setSelectedPlayer(null)}
+        />
       )}
     </div>
   );
