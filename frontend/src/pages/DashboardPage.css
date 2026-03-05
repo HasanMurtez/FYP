@@ -174,3 +174,27 @@
   padding: 40px;
   font-size: 1rem;
 }
+
+/* Scout Button */
+.scout-button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  border: none;
+  border-radius: 8px;
+  color: #0f1923;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.scout-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+}
+
+.scout-button:active {
+  transform: translateY(0);
+}
