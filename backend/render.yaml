@@ -1,0 +1,12 @@
+
+services:
+  - type: web
+    name: football-club-api
+    env: python
+    buildCommand: bash render-build.sh
+    startCommand: gunicorn run:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: PYTHON_VERSION
+        value: 3.12.1
