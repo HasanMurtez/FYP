@@ -1,3 +1,4 @@
+
 # Flask & API
 flask==3.0.0
 flask-cors==4.0.0
@@ -23,5 +24,5 @@ requests==2.31.0
 matplotlib==3.8.2
 seaborn==0.13.0
 
-# Development
-jupyter==1.0.0
+# Production Server
+gunicorn==21.2.0
