@@ -1,8 +1,11 @@
 
 import axios from 'axios';
 
-// Use proxy - no base URL needed
+// Use production backend URL
+const BASE_URL = process.env.REACT_APP_API_URL || 'https://football-club-backend-bc4r.onrender.com';
+
 const api = axios.create({
+  baseURL: BASE_URL,
   timeout: 30000,
 });
 
@@ -11,7 +14,7 @@ export const getTeams = () => api.get('/api/teams');
 export const getTeam = (id) => api.get(`/api/teams/${id}`);
 export const getTeamPlayers = (id, filters = {}) => api.get(`/api/teams/${id}/players`, { params: filters });
 
-// PLAYERS  
+// PLAYERS
 export const getPlayers = (filters = {}) => api.get('/api/players', { params: filters });
 export const getPlayer = (id) => api.get(`/api/players/${id}`);
 export const searchPlayers = (query) => api.get('/api/players/search', { params: { q: query } });
