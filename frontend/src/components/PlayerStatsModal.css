@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+/* =================== OVERLAY =================== */
+.stats-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.stats-modal {
+  background: linear-gradient(170deg, #161c28 0%, #0e1219 50%, #0a0d12 100%);
+  border: 1px solid #1a2535;
+  border-radius: 12px;
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+}
+
+.stats-modal::-webkit-scrollbar {
+  width: 4px;
+}
+
+.stats-modal::-webkit-scrollbar-thumb {
+  background: #1a2535;
+  border-radius: 2px;
+}
+
+.stats-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #1a2535;
+  color: #6b7a8d;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.stats-close:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+/* =================== HERO SECTION =================== */
+.stats-hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 20px;
+  border-bottom: 1px solid #1a2535;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
+}
+
+.hero-left {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.hero-photo-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  flex-shrink: 0;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.hero-rating {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #d4af37;
+  line-height: 1;
+}
+
+.hero-position {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6b7a8d;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+.hero-center {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.hero-fullname {
+  font-size: 0.8rem;
+  color: #4a5568;
+  margin-bottom: 8px;
+}
+
+.hero-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.hero-risk-badge,
+.hero-status-badge {
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero-news {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: #6b7a8d;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.hero-right {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.hero-risk-score {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #8b9bb4;
+  line-height: 1;
+}
+
+.hero-risk-label {
+  font-size: 0.55rem;
+  color: #4a5568;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* =================== STATS SECTIONS =================== */
+.stats-section {
+  padding: 16px 20px;
+  border-bottom: 1px solid #1a2535;
+}
+
+.stats-section:last-of-type {
+  border-bottom: none;
+}
+
+.stats-section-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4a5568;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+/* =================== STAT BARS =================== */
+.stat-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat-bar-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #6b7a8d;
+  letter-spacing: 1px;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.stat-bar-track {
+  flex: 1;
+  height: 6px;
+  background: #111820;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #d4af37, #e8c547);
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+
+.stat-bar-value {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  width: 50px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* =================== INJURY GRID =================== */
+.injury-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.injury-stat {
+  background: #111820;
+  border: 1px solid #1a2535;
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.injury-label {
+  font-size: 0.65rem;
+  color: #6b7a8d;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.injury-value {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.injury-value[data-warning="true"] {
+  color: #ef4444;
+}
+
+/* =================== QUICK STATS =================== */
+.quick-stats-row {
+  display: flex;
+  gap: 8px;
+}
+
+.quick-stat {
+  flex: 1;
+  background: #111820;
+  border: 1px solid #1a2535;
+  border-radius: 6px;
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.quick-val {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.quick-label {
+  font-size: 0.55rem;
+  color: #4a5568;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* =================== ACTIONS =================== */
+.stats-actions {
+  padding: 16px 20px 20px;
+}
+
+.action-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-scout {
+  background: linear-gradient(135deg, #d4af37, #b8972e);
+  color: #0a0e14;
+}
+
+.action-scout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+}
+
+.action-scout:active {
+  transform: translateY(0);
+}
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 500px) {
+  .stats-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-badges {
+    justify-content: center;
+  }
+
+  .injury-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-stats-row {
+    flex-wrap: wrap;
+  }
+
+  .quick-stat {
+    flex-basis: calc(50% - 4px);
+  }
+}
