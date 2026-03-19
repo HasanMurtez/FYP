@@ -1,4 +1,3 @@
-
 from flask import Blueprint, jsonify
 import requests
 import time
@@ -199,6 +198,7 @@ def sync_fpl_data():
 
                 player_fields = {
                     'fpl_id': player_data['id'],  # set fpl_id
+                    'code': player_data.get('code'),  # FPL player code for photo URL
                     'web_name': player_data['web_name'],
                     'full_name': f"{player_data['first_name']} {player_data['second_name']}",
                     'position': features['position'],
