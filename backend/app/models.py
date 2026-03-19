@@ -52,6 +52,7 @@ class Player(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
     fpl_id = db.Column(db.Integer, unique=True, nullable=False)
+    code = db.Column(db.Integer, nullable=True)  # FPL player code for photo URL
     
     # Basic Info
     web_name = db.Column(db.String(50), nullable=False)
@@ -119,6 +120,7 @@ class Player(db.Model):
         data = {
             'id': self.id,
             'fpl_id': self.fpl_id,
+            'code': self.code,
             'web_name': self.web_name,
             'full_name': self.full_name,
             'position': self.position,
