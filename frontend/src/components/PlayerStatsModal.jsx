@@ -1,7 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PlayerStatsModal.css';
 
-function PlayerStatsModal({ player, onClose, onFindReplacement, getOverallRating }) {
+// Helper to get player initials for fallback
+const getInitials = (name) => {
+  if (!name) return '?';
+  const parts = name.split(/[\s.]+/);
+  if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
+  return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+};
+
+function PlayerPhoto({ code, name }) {
+  const [imgFailed, setImgFailed] = useState(false);
+  const photoUrl = code
+    ? `https://resources.premierleague.com/premierleague/photos/players/250x250/p${code}.png`
+    : null;
+
+  if (!photoUrl || imgFailed) {
+    return (
+      <div className="hero-photo-fallback">
+        {getInitials(name)}
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={photoUrl}
+      alt={name}
+      className="hero-photo"
+      onError={() => setImgFailed(true)}
+    />
+  );
+}
+
+function PlayerStatsModal({ player, onClose, onFindReplacement }) {
 
   const getRiskColor = (risk) => {
     if (risk === 'High') return '#ef4444';
@@ -9,45 +41,14 @@ function PlayerStatsModal({ player, onClose, onFindReplacement, getOverallRating
     return '#22c55e';
   };
 
-  const rating = getOverallRating(player);
-
-  // Build stat bars (0-100 scale for visual display)
   const stats = [
-    {
-      label: 'MINUTES',
-      value: player.minutes,
-      bar: Math.min((player.minutes / 2500) * 100, 100),
-    },
-    {
-      label: 'GOALS',
-      value: player.goals_scored,
-      bar: Math.min((player.goals_scored / 20) * 100, 100),
-    },
-    {
-      label: 'ASSISTS',
-      value: player.assists,
-      bar: Math.min((player.assists / 15) * 100, 100),
-    },
-    {
-      label: 'ICT INDEX',
-      value: parseFloat(player.ict_index).toFixed(1),
-      bar: Math.min((player.ict_index / 300) * 100, 100),
-    },
-    {
-      label: 'INFLUENCE',
-      value: parseFloat(player.influence).toFixed(1),
-      bar: Math.min((player.influence / 500) * 100, 100),
-    },
-    {
-      label: 'CREATIVITY',
-      value: parseFloat(player.creativity).toFixed(1),
-      bar: Math.min((player.creativity / 500) * 100, 100),
-    },
-    {
-      label: 'THREAT',
-      value: parseFloat(player.threat).toFixed(1),
-      bar: Math.min((player.threat / 500) * 100, 100),
-    },
+    { label: 'MINUTES', value: player.minutes, bar: Math.min((player.minutes / 2500) * 100, 100) },
+    { label: 'GOALS', value: player.goals_scored, bar: Math.min((player.goals_scored / 20) * 100, 100) },
+    { label: 'ASSISTS', value: player.assists, bar: Math.min((player.assists / 15) * 100, 100) },
+    { label: 'ICT INDEX', value: parseFloat(player.ict_index).toFixed(1), bar: Math.min((player.ict_index / 300) * 100, 100) },
+    { label: 'INFLUENCE', value: parseFloat(player.influence).toFixed(1), bar: Math.min((player.influence / 500) * 100, 100) },
+    { label: 'CREATIVITY', value: parseFloat(player.creativity).toFixed(1), bar: Math.min((player.creativity / 500) * 100, 100) },
+    { label: 'THREAT', value: parseFloat(player.threat).toFixed(1), bar: Math.min((player.threat / 500) * 100, 100) },
   ];
 
   const injuryStats = [
@@ -62,32 +63,21 @@ function PlayerStatsModal({ player, onClose, onFindReplacement, getOverallRating
   return (
     <div className="stats-overlay" onClick={onClose}>
       <div className="stats-modal" onClick={(e) => e.stopPropagation()}>
-        {/* Close button */}
         <button className="stats-close" onClick={onClose}>✕</button>
 
-        {/* Top section - player identity */}
+        {/* Top section */}
         <div className="stats-hero">
-          <div className="hero-left">
-            <div className="hero-rating">{rating}</div>
-            <div className="hero-position">{player.position}</div>
-          </div>
           <div className="hero-photo-wrapper">
-            <img
-              src={`https://resources.premierleague.com/premierleague/photos/players/110x140/p${player.code}.png`}
-              alt={player.web_name}
-              className="hero-photo"
-              onError={(e) => { e.target.style.display = 'none'; }}
-            />
+            <PlayerPhoto code={player.code} name={player.web_name} />
           </div>
           <div className="hero-center">
             <h2 className="hero-name">{player.web_name}</h2>
             <p className="hero-fullname">{player.full_name}</p>
             <div className="hero-badges">
+              <span className="hero-pos-badge">{player.position}</span>
               <span
                 className="hero-risk-badge"
-                style={{
-                  backgroundColor: getRiskColor(player.injury_risk_level),
-                }}
+                style={{ backgroundColor: getRiskColor(player.injury_risk_level) }}
               >
                 {player.injury_risk_level} Risk
               </span>
@@ -123,10 +113,7 @@ function PlayerStatsModal({ player, onClose, onFindReplacement, getOverallRating
               <div key={i} className="stat-bar-row">
                 <span className="stat-bar-label">{stat.label}</span>
                 <div className="stat-bar-track">
-                  <div
-                    className="stat-bar-fill"
-                    style={{ width: `${stat.bar}%` }}
-                  />
+                  <div className="stat-bar-fill" style={{ width: `${stat.bar}%` }} />
                 </div>
                 <span className="stat-bar-value">{stat.value}</span>
               </div>
@@ -134,7 +121,7 @@ function PlayerStatsModal({ player, onClose, onFindReplacement, getOverallRating
           </div>
         </div>
 
-        {/* Injury / Risk Stats */}
+        {/* Injury Stats */}
         <div className="stats-section">
           <h3 className="stats-section-title">INJURY & WORKLOAD</h3>
           <div className="injury-grid">
@@ -155,7 +142,7 @@ function PlayerStatsModal({ player, onClose, onFindReplacement, getOverallRating
           </div>
         </div>
 
-        {/* Quick stats row */}
+        {/* Discipline */}
         <div className="stats-section">
           <h3 className="stats-section-title">DISCIPLINE & FORM</h3>
           <div className="quick-stats-row">
