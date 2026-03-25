@@ -26,6 +26,47 @@ const FORMATION_433 = {
   ],
 };
 
+// Helper to get player initials for fallback
+const getInitials = (name) => {
+  if (!name) return '?';
+  const parts = name.split(/[\s.]+/);
+  if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
+  return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+};
+
+// Player photo URL — use 250x250 for better quality
+const getPlayerPhotoUrl = (code) => {
+  if (!code) return null;
+  return `https://resources.premierleague.com/premierleague/photos/players/250x250/p${code}.png`;
+};
+
+// Photo component with initials fallback
+function PlayerPhoto({ code, name, size = 54, className = '' }) {
+  const [imgFailed, setImgFailed] = useState(false);
+  const photoUrl = getPlayerPhotoUrl(code);
+
+  if (!photoUrl || imgFailed) {
+    return (
+      <div
+        className={`photo-fallback ${className}`}
+        style={{ width: size, height: size, fontSize: size * 0.35 }}
+      >
+        {getInitials(name)}
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={photoUrl}
+      alt={name}
+      className={`player-photo-img ${className}`}
+      style={{ width: size, height: size }}
+      onError={() => setImgFailed(true)}
+    />
+  );
+}
+
 function DashboardPage() {
   const { teamId } = useParams();
   const navigate = useNavigate();
@@ -56,7 +97,11 @@ function DashboardPage() {
     }
   };
 
-  // Pick the best starting XI based on minutes played
+  // Pick the best starting XI:
+  // 1. Prefer available players (status 'a')
+  // 2. Among available, pick by most recent minutes (last 5 games)
+  // 3. Fall back to total minutes if recent is tied
+  // 4. Only pick players with actual game time (minutes > 0)
   const getStartingXI = () => {
     const byPosition = { GK: [], DEF: [], MID: [], FWD: [] };
     players.forEach(p => {
@@ -65,9 +110,22 @@ function DashboardPage() {
       }
     });
 
-    // Sort each position by minutes (most played = starter)
+    // Sort: available first, then by recent minutes, then total minutes
     Object.keys(byPosition).forEach(pos => {
-      byPosition[pos].sort((a, b) => b.minutes - a.minutes);
+      byPosition[pos].sort((a, b) => {
+        // Available players first
+        const aAvail = a.status === 'a' ? 1 : 0;
+        const bAvail = b.status === 'a' ? 1 : 0;
+        if (bAvail !== aAvail) return bAvail - aAvail;
+
+        // Then by recent minutes (last 5 games)
+        const aRecent = a.recent_minutes_last_5 || 0;
+        const bRecent = b.recent_minutes_last_5 || 0;
+        if (bRecent !== aRecent) return bRecent - aRecent;
+
+        // Then by total minutes
+        return (b.minutes || 0) - (a.minutes || 0);
+      });
     });
 
     const starters = [];
@@ -105,15 +163,6 @@ function DashboardPage() {
     if (risk === 'High') return '#ef4444';
     if (risk === 'Medium') return '#f59e0b';
     return '#22c55e';
-  };
-
-  const getOverallRating = (player) => {
-    const minuteScore = Math.min(player.minutes / 2500, 1) * 30;
-    const goalScore = Math.min(player.goals_scored / 15, 1) * 25;
-    const assistScore = Math.min(player.assists / 12, 1) * 20;
-    const ictScore = Math.min(player.ict_index / 200, 1) * 25;
-    const raw = minuteScore + goalScore + assistScore + ictScore;
-    return Math.max(40, Math.min(99, Math.round(raw + 45)));
   };
 
   if (loading) {
@@ -186,17 +235,9 @@ function DashboardPage() {
                     boxShadow: `0 4px 24px ${getRiskGlow(player.injury_risk_level)}`,
                   }}
                 >
-                  <div className="card-top-row">
-                    <div className="card-rating">{getOverallRating(player)}</div>
-                    <div className="card-position-badge">{player.position}</div>
-                  </div>
+                  <div className="card-position-badge">{player.position}</div>
                   <div className="card-photo-wrapper">
-                    <img
-                      src={`https://resources.premierleague.com/premierleague/photos/players/110x140/p${player.code}.png`}
-                      alt={player.web_name}
-                      className="card-photo"
-                      onError={(e) => { e.target.style.display = 'none'; }}
-                    />
+                    <PlayerPhoto code={player.code} name={player.web_name} size={58} className="card-photo" />
                   </div>
                   <div className="card-name">{player.web_name}</div>
                   <div className="card-divider" />
@@ -247,17 +288,9 @@ function DashboardPage() {
                 boxShadow: `0 2px 12px ${getRiskGlow(player.injury_risk_level)}`,
               }}
             >
-              <div className="bench-top">
-                <div className="bench-rating">{getOverallRating(player)}</div>
-                <div className="bench-pos">{player.position}</div>
-              </div>
+              <div className="bench-pos-badge">{player.position}</div>
               <div className="bench-photo-wrapper">
-                <img
-                  src={`https://resources.premierleague.com/premierleague/photos/players/110x140/p${player.code}.png`}
-                  alt={player.web_name}
-                  className="bench-photo"
-                  onError={(e) => { e.target.style.display = 'none'; }}
-                />
+                <PlayerPhoto code={player.code} name={player.web_name} size={44} className="bench-photo" />
               </div>
               <div className="bench-name">{player.web_name}</div>
               <div className="bench-stats">
@@ -287,7 +320,6 @@ function DashboardPage() {
           onFindReplacement={() => {
             setScoutingPlayer(selectedPlayer);
           }}
-          getOverallRating={getOverallRating}
         />
       )}
 
