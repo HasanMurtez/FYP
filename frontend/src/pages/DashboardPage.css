@@ -66,9 +66,7 @@
   border-color: #d4af37;
 }
 
-.header-info {
-  flex: 1;
-}
+.header-info { flex: 1; }
 
 .team-name-header {
   font-family: 'Oswald', sans-serif;
@@ -80,10 +78,7 @@
   margin-bottom: 6px;
 }
 
-.header-badges {
-  display: flex;
-  gap: 10px;
-}
+.header-badges { display: flex; gap: 10px; }
 
 .header-badge {
   padding: 3px 12px;
@@ -97,25 +92,10 @@
   text-transform: uppercase;
 }
 
-.badge-formation {
-  color: #d4af37;
-  border-color: rgba(212, 175, 55, 0.3);
-}
-
-.badge-congestion[data-level="High"] {
-  color: #ef4444;
-  border-color: rgba(239, 68, 68, 0.3);
-}
-
-.badge-congestion[data-level="Medium"] {
-  color: #f59e0b;
-  border-color: rgba(245, 158, 11, 0.3);
-}
-
-.badge-congestion[data-level="Low"] {
-  color: #22c55e;
-  border-color: rgba(34, 197, 94, 0.3);
-}
+.badge-formation { color: #d4af37; border-color: rgba(212, 175, 55, 0.3); }
+.badge-congestion[data-level="High"] { color: #ef4444; border-color: rgba(239, 68, 68, 0.3); }
+.badge-congestion[data-level="Medium"] { color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); }
+.badge-congestion[data-level="Low"] { color: #22c55e; border-color: rgba(34, 197, 94, 0.3); }
 
 /* =================== PITCH =================== */
 .pitch-wrapper {
@@ -147,102 +127,52 @@
 
 /* =================== PITCH MARKINGS =================== */
 .center-line {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.2);
+  position: absolute; top: 50%; left: 0; right: 0;
+  height: 2px; background: rgba(255, 255, 255, 0.2);
 }
-
 .center-circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 18%;
-  aspect-ratio: 1;
+  position: absolute; top: 50%; left: 50%;
+  width: 18%; aspect-ratio: 1;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+  border-radius: 50%; transform: translate(-50%, -50%);
 }
-
 .center-dot {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 8px;
-  height: 8px;
+  position: absolute; top: 50%; left: 50%;
+  width: 8px; height: 8px;
   background: rgba(255, 255, 255, 0.25);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+  border-radius: 50%; transform: translate(-50%, -50%);
 }
-
 .penalty-box-top {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 55%;
-  height: 16%;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-top: none;
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 55%; height: 16%;
+  border: 2px solid rgba(255, 255, 255, 0.2); border-top: none;
 }
-
 .penalty-box-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 55%;
-  height: 16%;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-bottom: none;
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 55%; height: 16%;
+  border: 2px solid rgba(255, 255, 255, 0.2); border-bottom: none;
 }
-
 .goal-box-top {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 25%;
-  height: 6%;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-top: none;
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 25%; height: 6%;
+  border: 2px solid rgba(255, 255, 255, 0.2); border-top: none;
 }
-
 .goal-box-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 25%;
-  height: 6%;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-bottom: none;
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 25%; height: 6%;
+  border: 2px solid rgba(255, 255, 255, 0.2); border-bottom: none;
 }
-
 .penalty-arc-top {
-  position: absolute;
-  top: 13%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20%;
-  aspect-ratio: 2 / 1;
+  position: absolute; top: 13%; left: 50%; transform: translateX(-50%);
+  width: 20%; aspect-ratio: 2 / 1;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0 0 50% 50%;
-  border-top: none;
+  border-radius: 0 0 50% 50%; border-top: none;
 }
-
 .penalty-arc-bottom {
-  position: absolute;
-  bottom: 13%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20%;
-  aspect-ratio: 2 / 1;
+  position: absolute; bottom: 13%; left: 50%; transform: translateX(-50%);
+  width: 20%; aspect-ratio: 2 / 1;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50% 50% 0 0;
-  border-bottom: none;
+  border-radius: 50% 50% 0 0; border-bottom: none;
 }
 
 /* =================== PLAYER CARDS ON PITCH =================== */
@@ -260,7 +190,7 @@
 }
 
 .player-card-fifa {
-  width: 90px;
+  width: 95px;
   background: linear-gradient(160deg, #1b1f2a 0%, #12151e 60%, #0d0f16 100%);
   border: 2px solid;
   border-radius: 8px;
@@ -273,39 +203,55 @@
 .player-card-fifa::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 40%;
   background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, transparent 100%);
   pointer-events: none;
 }
 
-.card-top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.card-position-badge {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: #d4af37;
+  background: rgba(212, 175, 55, 0.1);
+  padding: 1px 6px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  display: inline-block;
   margin-bottom: 2px;
   position: relative;
   z-index: 1;
 }
 
-.card-rating {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #d4af37;
-  line-height: 1;
+.card-photo-wrapper {
+  width: 58px;
+  height: 58px;
+  margin: 2px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
-.card-position-badge {
-  font-size: 0.55rem;
-  font-weight: 700;
+/* Shared photo styles */
+.player-photo-img {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.photo-fallback {
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e2d3d, #2a3a4d);
   color: #8b9bb4;
-  background: rgba(255, 255, 255, 0.06);
-  padding: 1px 5px;
-  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
   letter-spacing: 1px;
+  border: 2px solid rgba(139, 155, 180, 0.2);
 }
 
 .card-name {
@@ -337,11 +283,7 @@
   z-index: 1;
 }
 
-.mini-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.mini-stat { display: flex; flex-direction: column; align-items: center; }
 
 .mini-val {
   font-family: 'Oswald', sans-serif;
@@ -360,28 +302,8 @@
 
 .card-risk-strip {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 0; left: 0; right: 0;
   height: 3px;
-}
-
-.card-photo-wrapper {
-  width: 54px;
-  height: 54px;
-  margin: 2px auto 2px;
-  border-radius: 50%;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.05);
-  position: relative;
-  z-index: 1;
-}
-
-.card-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
 }
 
 .player-status-icon {
@@ -393,9 +315,7 @@
 }
 
 /* =================== BENCH =================== */
-.bench-section {
-  padding: 16px 24px 32px;
-}
+.bench-section { padding: 16px 24px 32px; }
 
 .bench-header {
   display: flex;
@@ -428,18 +348,9 @@
   scrollbar-color: #1a2535 transparent;
 }
 
-.bench-scroll::-webkit-scrollbar {
-  height: 6px;
-}
-
-.bench-scroll::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.bench-scroll::-webkit-scrollbar-thumb {
-  background: #1a2535;
-  border-radius: 3px;
-}
+.bench-scroll::-webkit-scrollbar { height: 6px; }
+.bench-scroll::-webkit-scrollbar-track { background: transparent; }
+.bench-scroll::-webkit-scrollbar-thumb { background: #1a2535; border-radius: 3px; }
 
 .bench-card {
   flex-shrink: 0;
@@ -455,33 +366,26 @@
   text-align: center;
 }
 
-.bench-card:hover {
-  transform: translateY(-4px);
-}
+.bench-card:hover { transform: translateY(-4px); }
 
-.bench-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 4px;
-}
-
-.bench-rating {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.1rem;
+.bench-pos-badge {
+  font-size: 0.55rem;
   font-weight: 700;
   color: #d4af37;
-  line-height: 1;
-}
-
-.bench-pos {
-  font-size: 0.6rem;
-  font-weight: 700;
-  color: #6b7a8d;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(212, 175, 55, 0.1);
   padding: 1px 5px;
   border-radius: 3px;
   letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.bench-photo-wrapper {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 4px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .bench-name {
@@ -497,22 +401,6 @@
   margin-bottom: 4px;
 }
 
-.bench-photo-wrapper {
-  width: 44px;
-  height: 44px;
-  margin: 4px auto;
-  border-radius: 50%;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.bench-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-}
-
 .bench-stats {
   display: flex;
   justify-content: center;
@@ -525,9 +413,7 @@
 
 .bench-risk-strip {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 0; left: 0; right: 0;
   height: 3px;
 }
 
@@ -540,33 +426,11 @@
 
 /* =================== RESPONSIVE =================== */
 @media (max-width: 700px) {
-  .pitch {
-    aspect-ratio: 2.5 / 4;
-  }
-
-  .player-card-fifa {
-    width: 70px;
-    padding: 4px;
-  }
-
-  .card-rating {
-    font-size: 1rem;
-  }
-
-  .card-name {
-    font-size: 0.6rem;
-  }
-
-  .mini-val {
-    font-size: 0.65rem;
-  }
-
-  .mini-label {
-    font-size: 0.4rem;
-  }
-
-  .team-name-header {
-    font-size: 1.4rem;
-    letter-spacing: 2px;
-  }
+  .pitch { aspect-ratio: 2.5 / 4; }
+  .player-card-fifa { width: 72px; padding: 4px; }
+  .card-photo-wrapper { width: 44px; height: 44px; }
+  .card-name { font-size: 0.6rem; }
+  .mini-val { font-size: 0.65rem; }
+  .mini-label { font-size: 0.4rem; }
+  .team-name-header { font-size: 1.4rem; letter-spacing: 2px; }
 }
