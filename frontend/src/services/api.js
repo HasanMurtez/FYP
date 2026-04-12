@@ -1,10 +1,8 @@
-
 import axios from 'axios';
 
-// LOCAL development in GitHub Codespaces
-const BASE_URL = process.env.REACT_APP_API_URL || 'https://scaling-palm-tree-pjjvv9g97gg4hr6vj-5000.app.github.dev';
+// local development in GitHub Codespaces
+const BASE_URL = process.env.REACT_APP_API_URL || 'https://automatic-yodel-x5566x9x5jw6265jg-5000.app.github.dev';
 
-// RENDER deployment (uncomment this line and comment out the one above when deploying)
 // const BASE_URL = process.env.REACT_APP_API_URL || 'https://football-club-backend-bc4r.onrender.com';
 
 const api = axios.create({
