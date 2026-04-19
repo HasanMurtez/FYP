@@ -4,7 +4,7 @@ from datetime import datetime
 
 class Team(db.Model):
     """
-    Team model - represents a football team
+    Team model 
     """
     __tablename__ = 'teams'
     

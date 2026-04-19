@@ -125,7 +125,7 @@ def find_similar_players():
         for idx, distance in zip(indices[0], distances[0]):
             similar_player = candidate_players[idx]
             
-            # Calculate similarity score (0-100)
+            # Calculate similarity score
             # Lower distance = higher similarity
             # Convert euclidean distance to percentage similarity
             max_distance = 10.0  # Reasonable max distance

@@ -5,7 +5,7 @@ import ScoutingModal from '../components/ScoutingModal';
 import PlayerStatsModal from '../components/PlayerStatsModal';
 import './DashboardPage.css';
 
-// 4-3-3 formation positions (percentage-based for responsive layout)
+// 4-3-3 formation positions
 const FORMATION_433 = {
   GK: [{ top: 88, left: 50 }],
   DEF: [
@@ -98,10 +98,6 @@ function DashboardPage() {
   };
 
   // Pick the best starting XI:
-  // 1. Prefer available players (status 'a')
-  // 2. Among available, pick by most recent minutes (last 5 games)
-  // 3. Fall back to total minutes if recent is tied
-  // 4. Only pick players with actual game time (minutes > 0)
   const getStartingXI = () => {
     const byPosition = { GK: [], DEF: [], MID: [], FWD: [] };
     players.forEach(p => {
