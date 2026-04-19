@@ -63,9 +63,9 @@ def get_team_players(team_id):
     """
     Get all players for a specific team with optional filters
     Query params:
-    - position: Filter by position (GK, DEF, MID, FWD)
-    - risk: Filter by risk level (Low, Medium, High)
-    - status: Filter by status (a, d, i, u, s, n)
+    - position: Filter by position
+    - risk: Filter by risk level
+    - status: Filter by status
     """
     try:
         team = Team.query.get(team_id)
@@ -117,9 +117,9 @@ def get_all_players():
     """
     Get all players with optional filters
     Query params:
-    - position: Filter by position (GK, DEF, MID, FWD)
-    - risk: Filter by risk level (Low, Medium, High)
-    - status: Filter by status (a, d, i, u, s, n)
+    - position: Filter by position
+    - risk: Filter by risk level
+    - status: Filter by status
     - team_id: Filter by team
     - limit: Limit results (default: 100, max: 817)
     - offset: Offset for pagination (default: 0)

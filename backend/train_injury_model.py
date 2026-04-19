@@ -140,7 +140,7 @@ def train_model():
     smote = SMOTE(random_state=42 # Reproducible results
     , k_neighbors=3) 
 
-    # 1. Finding a High Risk player (e.g., injured player)
+    # 1. Finding a High Risk player
     # 2. Finding 3 similar High Risk players
     # 3. Creating a "blend" of their statistics
 
