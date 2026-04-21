@@ -109,7 +109,7 @@ CURRENT SQUAD DATA:
                 'anthropic-version': '2023-06-01'
             },
             json={
-                'model': 'claude-sonnet-4-6-20250415',
+                'model': 'claude-sonnet-4-6',
                 'max_tokens': 800,
                 'system': system_prompt,
                 'messages': messages
