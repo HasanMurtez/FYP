@@ -10,10 +10,10 @@ class DevelopmentConfig(Config):
 
 class ProductionConfig(Config):
     DEBUG = False
-    # Check both environment variable names
-    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI') or \
-                               os.environ.get('DATABASE_URL') or \
-                               'sqlite:///football_club.db'
+    database_url = os.environ.get('DATABASE_URL') or 'sqlite:///football_club.db'
+    if database_url.startswith('postgres://'):
+        database_url = database_url.replace('postgres://', 'postgresql://', 1)
+    SQLALCHEMY_DATABASE_URI = database_url
 
 config = {
     'development': DevelopmentConfig,
