@@ -6,7 +6,7 @@ import ChatBot from './components/ChatBot';
 import './App.css';
 
 // Get the API base URL from api.js config
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://automatic-yodel-x5566x9x5jw6265jg-5000.app.github.dev';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://fcm-backend-lvcp.onrender.com';
 
 function App() {
   return (

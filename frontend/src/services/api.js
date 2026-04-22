@@ -1,9 +1,10 @@
 import axios from 'axios';
 
-// local development in GitHub Codespaces
-const BASE_URL = process.env.REACT_APP_API_URL || 'https://automatic-yodel-x5566x9x5jw6265jg-5000.app.github.dev';
+//Render backend
+const BASE_URL = process.env.REACT_APP_API_URL || 'https://fcm-backend-lvcp.onrender.com';
 
-// const BASE_URL = process.env.REACT_APP_API_URL || 'https://football-club-backend-bc4r.onrender.com';
+// LOCAL development
+// const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 const api = axios.create({
   baseURL: BASE_URL,
