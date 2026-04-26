@@ -1,3 +1,4 @@
+import os
 from flask import Blueprint, jsonify, request
 import requests as http_requests
 from app import db
@@ -7,6 +8,7 @@ from app.models import Team, Player
 chat_bp = Blueprint('chat', __name__)
 
 ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages"
+ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY', '')
 
 
 def get_squad_context():
@@ -23,7 +25,6 @@ def get_squad_context():
         doubtful = [p for p in players if p.status == 'd']
         high_risk = [p for p in players if p.injury_risk_level == 'High']
 
-        # Build concise player list
         player_lines = []
         for p in sorted(players, key=lambda x: x.minutes, reverse=True)[:30]:
             player_lines.append(
@@ -50,7 +51,7 @@ def get_squad_context():
 
 @chat_bp.route('/api/chat', methods=['POST'])
 def chat():
-    """AI chatbot endpoint - answers football management questions using squad data"""
+    """AI chatbot endpoint, answers football management questions using squad data"""
     try:
         data = request.get_json()
         user_message = data.get('message', '').strip()
@@ -62,10 +63,14 @@ def chat():
                 'error': 'Message is required'
             }), 400
 
-        # Get squad data context
+        if not ANTHROPIC_API_KEY:
+            return jsonify({
+                'success': False,
+                'error': 'AI service not configured. Set ANTHROPIC_API_KEY environment variable.'
+            }), 500
+
         squad_context = get_squad_context()
 
-        # Build the system prompt
         system_prompt = f"""You are an AI Football Manager Assistant for a Premier League club management platform. You have access to real, current player data from the Fantasy Premier League API.
 
 Your role is to help managers make decisions about:
@@ -88,9 +93,8 @@ IMPORTANT GUIDELINES:
 CURRENT SQUAD DATA:
 {squad_context}"""
 
-        # Build messages for the API
         messages = []
-        for msg in conversation_history[-10:]:  # Keep last 10 messages for context
+        for msg in conversation_history[-10:]:
             messages.append({
                 'role': msg['role'],
                 'content': msg['content']
@@ -100,12 +104,11 @@ CURRENT SQUAD DATA:
             'content': user_message
         })
 
-        # Call Claude API
         response = http_requests.post(
             ANTHROPIC_API_URL,
             headers={
                 'Content-Type': 'application/json',
-                'x-api-key': data.get('api_key', ''),
+                'x-api-key': ANTHROPIC_API_KEY,
                 'anthropic-version': '2023-06-01'
             },
             json={
