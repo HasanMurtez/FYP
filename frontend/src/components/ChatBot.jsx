@@ -1,9 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './ChatBot.css';
 
-const API_KEY_STORAGE = 'fcm_chat_api_key';
-
-// Suggested questions for quick access
 const SUGGESTIONS = [
   "Which players should I rest this week?",
   "Who are the highest risk players across the league?",
@@ -22,10 +19,6 @@ function ChatBot({ apiBaseUrl }) {
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [apiKey, setApiKey] = useState(() => {
-    try { return localStorage.getItem(API_KEY_STORAGE) || ''; } catch { return ''; }
-  });
-  const [showKeyInput, setShowKeyInput] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -41,20 +34,9 @@ function ChatBot({ apiBaseUrl }) {
     }
   }, [isOpen]);
 
-  const saveApiKey = (key) => {
-    setApiKey(key);
-    try { localStorage.setItem(API_KEY_STORAGE, key); } catch {}
-    setShowKeyInput(false);
-  };
-
   const sendMessage = async (text) => {
     const messageText = text || input.trim();
     if (!messageText || loading) return;
-
-    if (!apiKey) {
-      setShowKeyInput(true);
-      return;
-    }
 
     const userMessage = { role: 'user', content: messageText };
     const newMessages = [...messages, userMessage];
@@ -68,8 +50,7 @@ function ChatBot({ apiBaseUrl }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           message: messageText,
-          history: newMessages.slice(1), // exclude initial greeting
-          api_key: apiKey
+          history: newMessages.slice(1)
         })
       });
 
@@ -83,7 +64,7 @@ function ChatBot({ apiBaseUrl }) {
       } else {
         setMessages([...newMessages, {
           role: 'assistant',
-          content: `Sorry boss, something went wrong: ${data.error}. Check your API key maybe?`
+          content: `Sorry boss, something went wrong: ${data.error}`
         }]);
       }
     } catch (err) {
@@ -103,15 +84,10 @@ function ChatBot({ apiBaseUrl }) {
     }
   };
 
-  const handleSuggestionClick = (suggestion) => {
-    sendMessage(suggestion);
-  };
-
   const showSuggestions = messages.length <= 1 && !loading;
 
   return (
     <>
-      {/* Chat Toggle Button */}
       <button
         className={`chat-toggle ${isOpen ? 'chat-toggle-open' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
@@ -120,10 +96,8 @@ function ChatBot({ apiBaseUrl }) {
         {isOpen ? '✕' : '⚽'}
       </button>
 
-      {/* Chat Panel */}
       {isOpen && (
         <div className="chat-panel">
-          {/* Header */}
           <div className="chat-header">
             <div className="chat-header-info">
               <div className="chat-header-dot" />
@@ -132,32 +106,8 @@ function ChatBot({ apiBaseUrl }) {
                 <div className="chat-header-subtitle">Premier League Assistant</div>
               </div>
             </div>
-            <button
-              className="chat-settings-btn"
-              onClick={() => setShowKeyInput(!showKeyInput)}
-              title="API Key Settings"
-            >
-              ⚙
-            </button>
           </div>
 
-          {/* API Key Input */}
-          {showKeyInput && (
-            <div className="chat-key-input">
-              <input
-                type="password"
-                placeholder="Enter Anthropic API key..."
-                value={apiKey}
-                onChange={(e) => setApiKey(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') saveApiKey(apiKey);
-                }}
-              />
-              <button onClick={() => saveApiKey(apiKey)}>Save</button>
-            </div>
-          )}
-
-          {/* Messages */}
           <div className="chat-messages">
             {messages.map((msg, i) => (
               <div
@@ -184,14 +134,13 @@ function ChatBot({ apiBaseUrl }) {
               </div>
             )}
 
-            {/* Suggestions */}
             {showSuggestions && (
               <div className="chat-suggestions">
                 {SUGGESTIONS.map((s, i) => (
                   <button
                     key={i}
                     className="chat-suggestion-btn"
-                    onClick={() => handleSuggestionClick(s)}
+                    onClick={() => sendMessage(s)}
                   >
                     {s}
                   </button>
@@ -202,7 +151,6 @@ function ChatBot({ apiBaseUrl }) {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input */}
           <div className="chat-input-area">
             <input
               ref={inputRef}
