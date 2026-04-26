@@ -237,7 +237,7 @@ def merge_and_prepare_data():
         'congestion_level': 'Medium'
     })
     
-    print(" Engineering features...")
+    print(" Engineering features")
     
     # Workload features
     df['workload_intensity'] = df['minutes'] / (df['starts'] + 1)
@@ -280,7 +280,7 @@ def ensure_directories():
 
 def main():
     """Run complete data collection pipeline"""
-    print("FPL INJURY RISK DATA COLLECTION")
+    print("FPL injury risk data collection started")
     
     start_time = datetime.now()
     
@@ -301,7 +301,7 @@ def main():
     
     elapsed = (datetime.now() - start_time).total_seconds()
     
-    print(" DATA COLLECTION COMPLETE!")
+    print(" Data Collection Complete")
     print(f"\n Output files:")
     print(f"   • data/raw/fpl_players_basic.csv")
     print(f"   • data/raw/fpl_player_history.csv")

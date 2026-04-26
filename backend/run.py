@@ -10,14 +10,14 @@ def init_db():
     """Initialize the database"""
     with app.app_context():
         db.create_all()
-        print("✅ Database initialized successfully!")
+        print("Database initialized successfully!")
 
 @app.cli.command()
 def drop_db():
     """Drop all database tables"""
     with app.app_context():
         db.drop_all()
-        print("✅ Database tables dropped!")
+        print("Database tables dropped!")
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
