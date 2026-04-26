@@ -4,11 +4,11 @@
 
 A full-stack web application that uses machine learning to predict injury risk for Premier League players and identify statistically similar replacements using KNN-based scouting. Built as a Final Year Project.
 
-🔗 **Live App:** [football-club-frontend.onrender.com](https://football-club-frontend.onrender.com)
-🔗 **API:** [fcm-backend-lvcp.onrender.com](https://fcm-backend-lvcp.onrender.com)
+🔗 **Live App (Frontend):** [football-club-frontend.onrender.com](https://football-club-frontend.onrender.com)
+🔗 **Backend:** [fcm-backend-lvcp.onrender.com](https://fcm-backend-lvcp.onrender.com)
 🎬 **Screencast:** [Watch Demo](https://go.screenpal.com/watch/cOfO2hnOkTc)
 
-> ⚠️ **Important:** If the app is not loading, the backend must be deployed first. Go to the Render dashboard, deploy the backend web service and wait for it to go live, then deploy the frontend static site. The frontend will not work without the backend running.
+> ⚠️ **Important:** If the app is not loading, the backend must be deployed first. Deploy the backend web service and wait for it to go live, then deploy the frontend static site. The frontend will not work without the backend running.
 ---
 
 ## Features
